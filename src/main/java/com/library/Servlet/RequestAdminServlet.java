@@ -55,6 +55,8 @@ public class RequestAdminServlet extends HttpServlet {
 			obDao.update(order);
 
 		}
+		
+		response.sendRedirect("user.jsp");
 
 	}
 

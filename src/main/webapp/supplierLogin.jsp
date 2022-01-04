@@ -29,14 +29,15 @@ table, th, td {
 </head>
 <body>
 <fieldset id="register">
+<%!ResultSet rs = null; %>
 <%
 		session = request.getSession();
 		OrderBookDaoImpl obDao = new OrderBookDaoImpl();
 		String book_name=null;
 		String author=null;
-		String user_name=request.getParameter("supplier");
+		String user_name=session.getAttribute("supplier").toString();
 		OrderBook order=new OrderBook(user_name,author,book_name);
-		ResultSet rs = null;
+		
 		try {
 			rs = obDao.view(order);
 		}  catch (Exception e) {

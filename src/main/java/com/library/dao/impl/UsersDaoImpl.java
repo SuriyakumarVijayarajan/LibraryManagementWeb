@@ -146,37 +146,36 @@ public void update(Users user)  {
 	
 	
 }
-public int getFine(Users user)  {
+public ResultSet getFine(Users user)  {
 	// TODO Auto-generated method stub
-	String query="Select fine_amount from user_details where user_name in ?";
+	String query="Select fine_amount,userwallet from user_details where user_name in ?";
 	try {
 	Connection con=ConnectionUtil.getDBConnect();
 	PreparedStatement pstmt=con.prepareStatement(query);
 	pstmt.setString(1, user.getUser_name());
 	ResultSet rs=pstmt.executeQuery();
 	System.out.println(user.getUser_name());
-	while(rs.next()) {
-		System.out.println(rs.getInt(1));
-		return rs.getInt(1);
-	}
+	rs.next();
+	return rs;
 	
 	}catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	return 0;
+	return null;
 }
 public int setFine(Users user)  {
 	// TODO Auto-generated method stub
 	String query1="select userwallet,fine_amount from user_details where user_name in ?";
 	String query="update user_details set userwallet =?,fine_amount=0 where user_name in ?";
+	int userWallet=0;
 	try {
 	Connection con=ConnectionUtil.getDBConnect();
 	PreparedStatement pstmt=con.prepareStatement(query1);
 	
 	pstmt.setString(1, user.getUser_name());
 	ResultSet rs=pstmt.executeQuery();
-	int userWallet=0;
+	
 	while(rs.next()) {
 		userWallet=rs.getInt(1)-user.getFine_amount();
 		System.out.println(user.getFine_amount());
@@ -196,11 +195,11 @@ public int setFine(Users user)  {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	return 0;
+	return userWallet;
 	
 	
 }
-public void forgotPassword(Users users) {
+public int forgotPassword(Users users) {
 	// TODO Auto-generated method stub
 	String query="update user_details set password=? where user_name=?";
 	try {
@@ -217,7 +216,27 @@ public void forgotPassword(Users users) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	return 1;
 	
+}
+
+public int walletRecharge(Users user) {
+	
+	String query="update user_details set userwallet=(userwallet+500) where user_name in ?";
+try {
+		
+		Connection con=ConnectionUtil.getDBConnect();
+		PreparedStatement pstmt=con.prepareStatement(query);
+		pstmt.setString(1, user.getUser_name());
+		int i=pstmt.executeUpdate();
+		if(i>0) {
+			System.out.println("wallet updated");
+		}
+	}catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return 1;
 }
 
 

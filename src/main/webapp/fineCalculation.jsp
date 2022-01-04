@@ -31,8 +31,6 @@ if (fineOf > 0) {
 	<%=user_name %><p>you have fine of rs</p><%=fineOf %>
 	<p>	You want to pay now or later</p>
 	<button type="submit"><a href="returnSuccess.jsp">Pay now</a></button>
-	<button type="submit"><a href="user.jsp">Pay Later</a></button>
-	<button><a href="Logout.jsp">logout</a></button>
 </fieldset>							
 </body>
 </html>

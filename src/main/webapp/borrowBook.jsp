@@ -24,7 +24,7 @@
 <fieldset id="register">
 <form action="bookName" method="post">
 <label>Enter the Book Name</label>
-<input type="text" name="bookname"><br>
+<input type="text" name="bookname" required pattern="[a-zA-Z\s]{3,}"><br>
 <button type="submit">Borrow Book</button>
 </form>
 </fieldset>

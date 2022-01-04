@@ -1,4 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.library.dao.impl.*" import="com.library.model.*"%>
 <!DOCTYPE html>
@@ -18,31 +17,20 @@
             background-size:cover;
             color:springgreen;
         }
-        a{
-        text-decoration:none;
-        }
 
     </style>
 </head>
 <body>
 <fieldset id="register">
-<form action="bookReturn">
-<h1>The Books To be Returned</h1>
-<%!ResultSet rs; %>
-<%
-BooksDaoImpl book=new BooksDaoImpl();
-String user_name=session.getAttribute("user").toString();
-String book_name=null;
-Books books=new Books(book_name,user_name);
-rs=book.returnBookList(books);
-while(rs.next()){%>
-<%=rs.getString(1) %>&emsp;<a href="bookReturn?bookreturn=<%=rs.getString(1)%>">Return Book</a><br><br>
-<%} %>
-
-
-
-
-</form>
+<h1>Welcome</h1>
+	<form>
+	<p>Welcome your walletamount is very low</p>
+	<p>You have to recharge your wallet to enter in to library</p>
+	<p>Are you ready to pay </p>
+	<button type="submit"><a href="index.jsp">Pay later</a></button>
+	<button type="submit"><a href="loginwallet.jsp">Pay now</a></button>
+	</form>
+		<button><a href="Logout.jsp">logout</a></button>	
 </fieldset>
 </body>
 </html>

@@ -21,13 +21,13 @@
     </style>
 </head>
 <body>
-<fieldset id="register">]
+<fieldset id="register">
 <h1>New Book Request</h1>
 <form action="requestBook" method="post" >
-<label>Book Name</label>
-<input type="text" name="bookName" pattern="[A-Za-z]{3,}" required>
-<label>Author Name</label>
-<input type="text" name="authorName" pattern="[A-Za-z]{3,}" required>
+<label>Book Name</label><br>
+<input type="text" name="bookName" pattern="[A-Za-z\s]{3,}" required><br><br>
+<label>Author Name</label><br>
+<input type="text" name="authorName" pattern="[A-Za-z\s]{3,}" required><br><br>
 <button type="submit">Request Book</button>
 <button><a href="Logout.jsp">logout</a></button>
 </form>

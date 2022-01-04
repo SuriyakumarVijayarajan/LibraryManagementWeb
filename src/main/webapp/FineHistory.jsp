@@ -20,9 +20,34 @@
             color:springgreen;
         }
 
-    </style>
+    .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a {
+  background-color: black;
+  color: white;
+  float: right;
+}
+   
+</style>
 </head>
-<body> 
+<body>
+<div class="topnav" >
+  <a class="active" href="admin.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>
+  
+</div>
     <div >
         <fieldset id="register">
             <legend><h3>User register</h3></legend>

@@ -22,6 +22,7 @@
 </head>
 <body>
 <fieldset id="register">
+<%!int userWallet; %>
 <%
 int fineOf=Integer.parseInt(session.getAttribute("fineamount").toString());
 String user_name=session.getAttribute("user").toString();
@@ -30,14 +31,14 @@ Users u3=new Users(fineOf,user_name);
 UsersDaoImpl user=new UsersDaoImpl();
 FineHistoryDaoImpl fineHistory=new FineHistoryDaoImpl();
 	try {
-				user.setFine(u3);
+				userWallet=user.setFine(u3);
 				FineHistory fh1 = new FineHistory(user_name, fineOf);
 				fineHistory.insert(fh1);
 				} catch (Exception e) {
 									
 				e.printStackTrace();
 				}%>
-				
+<h3>Your revised Wallet amount is <%=userWallet %></h3>				
 <h3>Book Return Success</h3><br><br>
 <h3><a href="user.jsp">Back to User Page</a></h3>&emsp;&emsp;
 <button><a href="Logout.jsp">logout</a></button>

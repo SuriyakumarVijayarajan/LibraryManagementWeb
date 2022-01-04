@@ -36,7 +36,7 @@
       </div id="admin1">
       <ul type="none">
             <li>
-              <a href="showBook.jsp">Show Books</a>
+              <a href="authorShowBook.jsp">Show Books</a>
             </li><br><br>
             <li>
               <a href="addBook.jsp">Add Books</a>

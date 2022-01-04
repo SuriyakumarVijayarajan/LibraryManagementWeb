@@ -27,7 +27,8 @@ BooksDaoImpl book=new BooksDaoImpl();
 String book_title=session.getAttribute("bookname").toString();
 String user_name=session.getAttribute("user").toString();
 	Books b1 = new Books(book_title, user_name);
-	String prerequestStatus=book.preRequest(b1);%>
+	String prerequestStatus=book.preRequest(b1);
+	System.out.println(prerequestStatus);%>
 	
 	<h3><%=prerequestStatus %></h3>
 	<button><a href="Logout.jsp">logout</a></button>

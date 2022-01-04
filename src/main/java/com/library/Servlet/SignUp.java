@@ -13,7 +13,7 @@ import com.library.model.Users;
 /**
  * Servlet implementation class SignUp
  */
-@WebServlet("/index.html")
+@WebServlet("/index1")
 public class SignUp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -61,7 +61,7 @@ public class SignUp extends HttpServlet {
 		UsersDaoImpl userDao=new UsersDaoImpl();
 		userDao.insert(user);
 		
-		
+		response.sendRedirect("index.jsp");
 		
 		
 	}

@@ -15,7 +15,7 @@
             background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:#00008B;
         }
 
     </style>
@@ -25,9 +25,9 @@
 <h3>Here After admin will takeover</h3>
 <h3>Hi admin Enter your user_name</h3>
 <form action="borrowadmin" method="post">
-<label for="User Name">User Name</label>
-    <input type="text" id = "uname" name="uname" required pattern="[A-Za-z]{3,}" ><br><br>
-    <label for= "password">Password</label>
+<label for="User Name"><h3>User Name</h3></label>
+    <input type="text" id = "uname" name="uname" required pattern="[A-Za-z]{3,}" ><br>
+    <label for= "password"><h3>Password</h3></label>
     <input type="password" id="password" name="password" required pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$"><br><br>
     <button type="submit">Log In</button>
     </form>

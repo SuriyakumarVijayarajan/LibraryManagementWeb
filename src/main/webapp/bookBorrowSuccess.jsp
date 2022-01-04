@@ -11,18 +11,21 @@
             margin-left: 600px;
             
         }
+        
+         
         body{
             background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
+           
         }
 
     </style>
 </head>
 <body>
-<fieldset>
-<p>Book Borrowed Success</p>
+<fieldset id="register">
+<p><h3>Book Borrowed Success</h3></p>
 
 <button><a href="user.jsp">Back To User</a></button>
 

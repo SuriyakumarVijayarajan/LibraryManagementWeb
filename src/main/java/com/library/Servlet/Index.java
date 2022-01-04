@@ -1,6 +1,9 @@
 package com.library.Servlet;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,18 +59,29 @@ session.setAttribute("admin", user_name);
 	else if(val.equals("user")) {
 		session.setAttribute("user", user_name);
 		System.out.println("Welcome User" + user_name);
+		int fineamount=0,userwallet=0;
 		int fineOf=0;
 		Users u3 = new Users(fineOf,user_name);
 		UsersDaoImpl user1=new UsersDaoImpl();
-		int fineamount = user1.getFine(u3);
+		ResultSet rs = user1.getFine(u3);
+		try {
+			fineamount=Integer.parseInt(rs.getString(1));
+			userwallet=Integer.parseInt(rs.getString(2));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		System.out.println(fineamount);
 		session.setAttribute("loginfine", fineamount);
-		if(fineamount>0) {
-			resp.sendRedirect("userFineCheck.jsp");
-			}
-		else if(fineamount==0) {
+		
+		if(userwallet>500) {
 			resp.sendRedirect("user.jsp");
 			}
+		else if(userwallet<=500) {
+			resp.sendRedirect("walletRecharge.jsp");
+		}
+		
 		
 		
 	}

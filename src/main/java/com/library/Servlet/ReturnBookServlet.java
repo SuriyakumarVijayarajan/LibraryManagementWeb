@@ -33,7 +33,29 @@ public class ReturnBookServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String bookName=request.getParameter("bookreturn");
+		BooksDaoImpl book=new BooksDaoImpl();
+		HttpSession session=request.getSession();
+		String book_title=session.getAttribute("bookname").toString();
+		String user_name=session.getAttribute("user").toString();
+		Books b1 = new Books(book_title, user_name);
+		boolean returnCheck = book.checkReturn(b1);
+		if (returnCheck) {
+		
+				b1=new Books(book_title);
+			int book_issue_no=book.getBookIssueNo(b1);
+			session.setAttribute("bookissueno", book_issue_no);
+			System.out.println(book_issue_no);
+			b1 = new Books(book_title);
+			book.returnBook(b1);
+			response.sendRedirect("bookReturnAdmin.jsp");
+		}
+		else {
+		PrintWriter pw=response.getWriter();
+		pw.write("The book You enter is invalid");
+		}
+		
 	}
 
 	/**

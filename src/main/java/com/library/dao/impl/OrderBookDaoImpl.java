@@ -80,12 +80,15 @@ public ResultSet view(OrderBook order)  {
 	Connection con=ConnectionUtil.getDBConnect();
 	PreparedStatement pstmt=con.prepareStatement(query);
 	pstmt.setString(1, order.getUser_name());
+	System.out.println(order.getUser_name());
 	rs=pstmt.executeQuery();
+	return rs;
 	}catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	return rs;
+   return null;
+	
 	
 }	
 

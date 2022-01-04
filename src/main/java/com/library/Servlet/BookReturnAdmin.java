@@ -1,6 +1,7 @@
 package com.library.Servlet;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 
 import javax.servlet.ServletException;
@@ -80,7 +81,8 @@ public class BookReturnAdmin extends HttpServlet {
 			int fineOf = 0;
 			FineHistoryDaoImpl fineHistory = new FineHistoryDaoImpl();
 			try {
-				fineOf = user.getFine(u3);
+				ResultSet rs= user.getFine(u3);
+				fineOf=rs.getInt(1);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

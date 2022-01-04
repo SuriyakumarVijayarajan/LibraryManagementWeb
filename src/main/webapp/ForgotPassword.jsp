@@ -27,7 +27,7 @@
     <input type="text" id = "uname" name="uname" pattern="[A-Za-z]{3,}" required><br><br>
     <label for= "password">Enter New Password</label>
     <input type="password" id="password" name="password" pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$" required><br><br>
-    <button type="submit">Log In</button>
+    <button type="submit">Change Password</button>
     </form>
     </fieldset>
 </body>

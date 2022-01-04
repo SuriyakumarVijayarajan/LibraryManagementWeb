@@ -300,14 +300,16 @@ public void delete(Books book) {
 
 	public String preRequest(Books book)  {
 		// TODO Auto-generated method stub
-		String query="update book_details set prerequest=? where book_title in ? and prerequest is null";
+		String query="update book_details set prerequest=? where book_title in ? and prerequest in 'none'";
 		Connection con = null;
 		try {
 			con = ConnectionUtil.getDBConnect();
 		PreparedStatement pstmt=con.prepareStatement(query);
 		pstmt.setString(1, book.getUser_name());
 		pstmt.setString(2, book.getBook_title());
+		System.out.println(book.getBook_title());
 		int i=pstmt.executeUpdate();
+		System.out.println(i);
 		if(i>0) {
 			return "Pre Request successful";
 		}
@@ -364,6 +366,23 @@ public void delete(Books book) {
 		
 		return 0;
 		
+	}
+	
+	public ResultSet returnBookList(Books book) {
+		String query="select book_title from book_details where user_name in ?";
+		ResultSet rs=null;
+		try {
+			Connection con=ConnectionUtil.getDBConnect();
+			PreparedStatement pstmt=con.prepareStatement(query);
+			pstmt.setString(1, book.getUser_name());
+			rs=pstmt.executeQuery();
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
 	}
 
 
