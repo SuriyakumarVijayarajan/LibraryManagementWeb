@@ -18,16 +18,37 @@ table, th, td {
             
         }
         body{
-            background-image: url(https://st2.depositphotos.com/1105977/5461/i/600/depositphotos_54615585-stock-photo-old-books-on-wooden-table.jpg);
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
+		button{
+		font-size:larger;
+		}
+		.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-   
+/* Add a color to the active/current link */
+.topnav a {
+  background-color: black;
+  color: white;
+  float: right;
+}
+a{
+color:white;
+}   
 </style>
-</head>
-<body>
 
 <%BooksDaoImpl book = new BooksDaoImpl();
 ResultSet rs = book.showBooks();%>

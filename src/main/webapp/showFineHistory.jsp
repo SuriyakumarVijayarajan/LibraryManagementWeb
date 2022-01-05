@@ -19,14 +19,15 @@ table, th, td {
             
         }
         body{
-            background-image: url(https://st2.depositphotos.com/1105977/5461/i/600/depositphotos_54615585-stock-photo-old-books-on-wooden-table.jpg);
-            background-repeat: no-repeat;
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+           background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
-
-  
-.topnav a {
+		button{
+		font-size:larger;
+		}
+		.topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -44,8 +45,7 @@ table, th, td {
   background-color: black;
   color: white;
   float: right;
-}
-   
+}   
 </style>
 </head>
 <body>

@@ -11,11 +11,15 @@
             margin-left: 600px;
             
         }
+        button{
+        font-size:medium;
+        }
         body{
             background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
+            font-size:larger;
         }
 
     </style>

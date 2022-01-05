@@ -48,6 +48,12 @@ fieldset{
   text-align: center;
 
 }
+body,p,pre{
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+           background-repeat: no-repeat;
+            background-size:cover;
+            color:white;
+        }
 </style>
 </head>
 <body>
@@ -72,14 +78,14 @@ fieldset{
         Kotturpuram 
         Chennai - 600025 
         Phone Number : 04422201011
-        Email : clbrnaclchn.dopl@tn.gov.in</pre>
+        Email : annalib@tn.gov.in</pre>
     </fieldset>
     <br><br>
 <hr>
     <footer>
       <pre id="foot">
         Copyright © 2022 Anna Centenary Library | Powered by Blogger
-Design by SimpleWpThemes | Blogger Theme by NewBloggerThemes.com
+       Design by SimpleWpThemes | Blogger Theme by NewBloggerThemes.com
       </pre>
     </footer>
 </body>

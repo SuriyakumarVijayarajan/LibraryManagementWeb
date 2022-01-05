@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.library.dao.impl.BooksDaoImpl;
+import com.library.exception.InvalidCategoryException;
 import com.library.model.Books;
 
 /**
@@ -54,9 +55,19 @@ public class AuthorSearch extends HttpServlet {
 		ResultSet rs = book.authorFetch(books);
 		session.setAttribute("booksearch", category);
 		try {
-			while (rs.next()) {
+			if (rs.next()){
+				do {
 				System.out.println(rs.getString(1));
+				}while(rs.next());
 
+			}
+			else {
+				try {
+					throw new InvalidCategoryException();
+				}catch(InvalidCategoryException e){
+					String validate=e.getMessage();
+					response.sendRedirect(validate);
+				}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

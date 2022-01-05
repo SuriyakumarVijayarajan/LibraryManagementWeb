@@ -37,17 +37,18 @@ public class ReturnBookServlet extends HttpServlet {
 		String bookName=request.getParameter("bookreturn");
 		BooksDaoImpl book=new BooksDaoImpl();
 		HttpSession session=request.getSession();
-		String book_title=session.getAttribute("bookname").toString();
+		session.setAttribute("bookname",bookName);
+//		String book_title=session.getAttribute("bookname").toString();
 		String user_name=session.getAttribute("user").toString();
-		Books b1 = new Books(book_title, user_name);
+		Books b1 = new Books(bookName, user_name);
 		boolean returnCheck = book.checkReturn(b1);
 		if (returnCheck) {
 		
-				b1=new Books(book_title);
+				b1=new Books(bookName);
 			int book_issue_no=book.getBookIssueNo(b1);
 			session.setAttribute("bookissueno", book_issue_no);
 			System.out.println(book_issue_no);
-			b1 = new Books(book_title);
+			b1 = new Books(bookName);
 			book.returnBook(b1);
 			response.sendRedirect("bookReturnAdmin.jsp");
 		}

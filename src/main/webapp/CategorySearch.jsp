@@ -6,10 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<style>
-a{
-text-decoration:none;
-
+<style type="text/css">
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
 }
 
         #register{
@@ -18,16 +19,43 @@ text-decoration:none;
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
-            background-repeat: no-repeat;
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+           background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
+		body,a{
+		font-size:larger;
+		}
+		a{
+		color:blue;
+		}
+		.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-    
+/* Add a color to the active/current link */
+.topnav a {
+  background-color: black;
+  color: white;
+  float: right;
+}   
 </style>
 </head>
 <body>
+<div class="topnav" >
+  <a class="active" href="admin.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>  
+</div>
 <fieldset id="register">
 <%!ResultSet rs; %>
 <%String categoryName=request.getParameter("category");
@@ -40,19 +68,17 @@ Books b1=new Books(book_title,categoryName,authorName);
 rs = book.categoryFetch(b1); %>
 
 <h1>Book List</h1>
-<table><br>
-<tr>
-<th>Book Name for  category</th>
-</tr>
+
+
 <% while(rs.next()){ %>
-<tr>
-<td><%= rs.getString(1)%></td><br>
-</tr>
+
+<%= rs.getString(1)%><br>
+
 <%} %>
 
-</table>
+
 <br><br>
-<a href="borrowBook.jsp">BorrowBook</a>
+<button><a href="borrowBook.jsp">BorrowBook</a></button>
 </fieldset>
 </body>
 

@@ -23,7 +23,7 @@
 <body>
 <fieldset id="register">
 <h3>Here After admin will takeover</h3>
-<h3>Hi admin Enter your user_name</h3>
+<h3>Hi admin Enter your user name</h3>
 <form action="borrowadmin" method="post">
 <label for="User Name"><h3>User Name</h3></label>
     <input type="text" id = "uname" name="uname" required pattern="[A-Za-z]{3,}" ><br>

@@ -16,6 +16,7 @@
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
+            font-size:larger;
         }
 
     </style>
@@ -30,9 +31,25 @@
     <label for= "password">Password</label>
     <input type="password" id="password" name="password1" required pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$"><br><br>
     <label for"returndate"name="returndate">Date Returned</label>
-    <input type="text" name="returndate"><br><br>
+    <input type="date" id="datefield" name="returndate"><br><br>
     <button type="submit">Log In</button>
     </form>
     </fieldset>
 </body>
+
+<script type="text/javascript">
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datefield").setAttribute("min", today);
+</script>
 </html>

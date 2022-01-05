@@ -7,20 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
-    <style>
+   <style type="text/css">
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+}
+
         #register{
             width: 350px;
             margin-left: 600px;
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
-            background-repeat: no-repeat;
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+           background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
-
-   .topnav a {
+		button{
+		font-size:larger;
+		}
+		.topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -38,11 +46,11 @@
   background-color: black;
   color: white;
   float: right;
-}
-   
+}   
 </style>
 </head>
 <body>
+
 <div class="topnav" >
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>

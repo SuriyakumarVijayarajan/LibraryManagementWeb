@@ -1,11 +1,11 @@
-<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import = "com.library.dao.impl.*"  import = "com.library.model.*"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -24,11 +24,8 @@ table, th, td {
             background-size:cover;
             color:white;
         }
-		body,a{
+		button,a{
 		font-size:larger;
-		}
-		a{
-		color:blue;
 		}
 		.topnav a {
   float: left;
@@ -41,6 +38,12 @@ table, th, td {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+  
+}
+a{
+
+text-decoration:none;
+color:white;
 }
 
 /* Add a color to the active/current link */
@@ -50,40 +53,13 @@ table, th, td {
   float: right;
 }   
 </style>
+
 </head>
 <body>
 
-<div class="topnav" >
-  <a class="active" href="admin.jsp">Home</a>
-  <a href="Logout.jsp">Logout</a>  
-</div>
-<fieldset id="register">
-<%!
-ResultSet rs;
-%>
-<%
 
-String authorName=request.getParameter("author");
-
-BooksDaoImpl book=new BooksDaoImpl();
+<center><h1>Invalid Category</h1></center>
 
 
-
-String category = null,book_title=null,author=null;
-Books books=new Books(book_title,category,authorName);
-rs = book.authorFetch(books);
-
-%>
-<h1>Book List</h1>
-
-<br>
-<% while(rs.next()){ %>
-<%= rs.getString(1)%><br>
-
-
-<%} %>
-<br><br>
-<button><a href="borrowBook.jsp">BorrowBook</a></button>
-</fieldset>
 </body>
 </html>

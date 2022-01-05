@@ -9,13 +9,18 @@
         #register{
             width: 350px;
             margin-left: 600px;
+            border-radius:25px;
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
+            font-size:larger;
+        }
+        a{
+        text-decoration:none;
         }
 
     </style>

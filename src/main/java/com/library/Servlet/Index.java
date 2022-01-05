@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.library.dao.impl.UsersDaoImpl;
+import com.library.exception.InvalidUserException;
 import com.library.model.Users;
 
 
@@ -50,7 +51,7 @@ session.setAttribute("admin", user_name);
 		
 		resp.sendRedirect("admin.jsp");
 	}
-	if (val.equals("supplier")) {
+	else if (val.equals("supplier")) {
 		session.setAttribute("supplier", user_name);
 				System.out.println("welcome Supplier " + user_name);
 				
@@ -80,6 +81,18 @@ session.setAttribute("admin", user_name);
 			}
 		else if(userwallet<=500) {
 			resp.sendRedirect("walletRecharge.jsp");
+		}
+		
+		
+		}
+	
+	else {
+		try {
+			throw new InvalidUserException();
+		}catch(InvalidUserException e) {
+			String validate=e.getMessage();
+			resp.sendRedirect(validate);
+			
 		}
 		
 		

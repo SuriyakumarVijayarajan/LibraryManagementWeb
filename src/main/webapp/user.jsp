@@ -7,28 +7,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, inital-scale=1">
     <head>
-      <style>
-        #admin1,li{
-          float: left;
-        }
-        ul,a{
-          float: left;
-          font-style: normal;
-          font-variant: small-caps;
-          text-decoration: none;
-          text-decoration-line: none;
-          color: white
+      <style type="text/css">
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+}
+
+        #register{
+            width: 350px;
+            margin-left: 600px;
+            
         }
         body{
-            background-image: url(https://st2.depositphotos.com/1105977/5461/i/600/depositphotos_54615585-stock-photo-old-books-on-wooden-table.jpg);
-            background-repeat: no-repeat;
+            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+           background-repeat: no-repeat;
             background-size:cover;
-            color: white;
+            color:white;
         }
-      </style>
-        
-    </head>
-    <body>
+        a{
+        text-decoration:none;
+        font-size:larger;
+        color:white;
+        }
+		button{
+		font-size:larger;
+		}
+		.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a {
+  background-color: black;
+  color: white;
+  float: right;
+}   
+</style>
+</head>
+<body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	
+	if (session.getAttribute("user") == null) {
+		response.sendRedirect("index.jsp");
+	} 
+	%>
+<div class="topnav" >
+  <a class="active" href="admin.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>  
+</div>
       <div class="main-header">
         <div class="container">
           <h1 class="lead text-center">
