@@ -49,31 +49,32 @@ public class AuthorSearch extends HttpServlet {
 		
 		BooksDaoImpl book=new BooksDaoImpl();
 		HttpSession session = request.getSession();
-		
+		try {
 		String category = null,book_title=null,author=null;
 		Books books=new Books(book_title,category,authorName);
 		ResultSet rs = book.authorFetch(books);
 		session.setAttribute("booksearch", category);
-		try {
+		
 			if (rs.next()){
 				do {
 				System.out.println(rs.getString(1));
 				}while(rs.next());
+				response.sendRedirect("AuthorSearch.jsp");
 
 			}
 			else {
-				try {
+			
 					throw new InvalidCategoryException();
-				}catch(InvalidCategoryException e){
-					String validate=e.getMessage();
-					response.sendRedirect(validate);
 				}
-			}
+			
+		}catch(InvalidCategoryException e){
+			String validate=e.getMessage();
+			response.sendRedirect(validate);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-		response.sendRedirect("AuthorSearch.jsp");
+		
 		
 	}
 

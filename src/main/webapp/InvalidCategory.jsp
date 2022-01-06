@@ -58,8 +58,7 @@ color:white;
 <body>
 
 
-<center><h1>You dont have any Book to return</h1></center>
-
+<h2>The Category you entered is invalid</h2>
 
 </body>
 </html>

@@ -71,6 +71,7 @@ public class BookAvailableServlet extends HttpServlet {
 			System.out.println("The book is in Rack number " + rackNumber);
 			PrintWriter pw=response.getWriter();
 			pw.write("The book is in Rack number " + rackNumber);
+			session.setAttribute("rack", rackNumber);
 			username=session.getAttribute("user").toString();
 			LocalDate date_issue = LocalDate.now();
 			LocalDate date_return = date_issue.plusMonths(3);

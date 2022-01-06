@@ -1,6 +1,6 @@
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="com.library.dao.impl.*" import="com.library.model.*"%>
+    pageEncoding="ISO-8859-1" import="com.library.dao.impl.*" import="com.library.model.*" import="com.library.exception.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,11 +70,18 @@ rs = book.categoryFetch(b1); %>
 <h1>Book List</h1>
 
 
-<% while(rs.next()){ %>
+<% if(rs.next()){do{ %>
 
 <%= rs.getString(1)%><br>
 
-<%} %>
+<%}while(rs.next());
+}else{
+	try{
+		throw new InvalidCategoryException();
+	}catch(InvalidCategoryException e){
+		String validate=e.getMessage();
+		response.sendRedirect(validate);
+	}} %>
 
 
 <br><br>
