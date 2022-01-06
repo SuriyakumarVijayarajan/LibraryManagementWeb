@@ -179,7 +179,7 @@ public int setFine(Users user)  {
 	while(rs.next()) {
 		userWallet=rs.getInt(1)-user.getFine_amount();
 		System.out.println(user.getFine_amount());
-		System.out.println("hi");
+		
 		System.out.println(rs.getInt(1));
 		System.out.println(rs.getInt(2));
 	

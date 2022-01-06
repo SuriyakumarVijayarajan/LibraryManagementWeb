@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -24,7 +25,12 @@ table, th, td {
             background-size:cover;
             color:white;
         }
-		button,a{
+        a{
+        text-decoration:none;
+        font-size:larger;
+        color:white;
+        }
+		button{
 		font-size:larger;
 		}
 		.topnav a {
@@ -38,12 +44,6 @@ table, th, td {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
-  
-}
-a{
-
-text-decoration:none;
-color:white;
 }
 
 /* Add a color to the active/current link */
@@ -53,9 +53,12 @@ color:white;
   float: right;
 }   
 </style>
-
 </head>
 <body>
+<div class="topnav" >
+  <a class="active" href="admin.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>  
+</div>
 
 
 <center><h1>Invalid User</h1></center>
