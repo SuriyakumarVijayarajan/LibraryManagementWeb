@@ -16,11 +16,18 @@
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
+            font-size:larger;
         }
 
     </style>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 <fieldset id="regiser">
 <% 
 	  UsersDaoImpl user=new UsersDaoImpl();

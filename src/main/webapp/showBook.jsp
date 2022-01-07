@@ -22,6 +22,7 @@ table, th, td {
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
+            font-size:larger;
         }
 		button{
 		font-size:larger;
@@ -49,6 +50,14 @@ a{
 color:white;
 }   
 </style>
+</head>
+<body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 
 <%BooksDaoImpl book = new BooksDaoImpl();
 ResultSet rs = book.showBooks();%>

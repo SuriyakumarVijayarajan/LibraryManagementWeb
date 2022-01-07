@@ -25,16 +25,24 @@
     </style>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 <fieldset id="register">
 <%
 int fineOf=Integer.parseInt(session.getAttribute("fineamount").toString());
 String user_name=null;
 if (fineOf > 0) {
 	user_name=session.getAttribute("user").toString();
-}%>
+%>
 	<%=user_name %><p>you have fine of rs</p><%=fineOf %>
 	<p>	You want to pay now or later</p>
 	<button type="submit"><a href="returnSuccess.jsp">Pay now</a></button>
+	<%}else{
+	response.sendRedirect("returnSuccess.jsp");} %>
 </fieldset>							
 </body>
 </html>

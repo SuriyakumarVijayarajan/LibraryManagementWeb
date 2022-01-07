@@ -169,8 +169,8 @@ update book_details set book_issue_no=14 where book_code=5002;
 
 
 update user_details
-set userwallet = (userwallet - 45)
-where user_name in 'mani';
+set userwallet = (userwallet - 500)
+where user_name in 'hari';
 delete from order_book where supplier_name in '103';
 
 create table fine_history(

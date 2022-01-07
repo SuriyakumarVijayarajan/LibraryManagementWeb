@@ -24,6 +24,12 @@ text-decoration:none;
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 <fieldset id="register">
 <h3>The Book is not available</h3>
 

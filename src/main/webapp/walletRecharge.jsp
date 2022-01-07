@@ -21,6 +21,12 @@
     </style>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 <fieldset id="register">
 <h1>Welcome</h1>
 	<form>

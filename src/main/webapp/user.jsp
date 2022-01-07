@@ -57,13 +57,11 @@ table, th, td {
 <body>
 <%
 	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-	
-	if (session.getAttribute("user") == null) {
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
 		response.sendRedirect("index.jsp");
-	} 
+	}
 	%>
 <div class="topnav" >
-  <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
       <div class="main-header">

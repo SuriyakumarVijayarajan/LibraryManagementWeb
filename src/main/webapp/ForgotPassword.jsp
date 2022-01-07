@@ -16,6 +16,7 @@
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
+            font-size:larger;
         }
 
     </style>

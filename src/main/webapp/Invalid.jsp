@@ -56,8 +56,7 @@ table, th, td {
 </head>
 <body>
 <div class="topnav" >
-  <a class="active" href="admin.jsp">Home</a>
-  <a href="Logout.jsp">Logout</a>  
+  <a class="active" href="index.jsp">Home</a>
 </div>
 
 

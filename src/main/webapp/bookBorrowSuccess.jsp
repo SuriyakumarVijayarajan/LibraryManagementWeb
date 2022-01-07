@@ -27,6 +27,12 @@
     </style>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 <fieldset id="register">
 <%int rack=(int) session.getAttribute("rack"); %>
 <h2>The Book is in Rack number : <%=rack %></h2>

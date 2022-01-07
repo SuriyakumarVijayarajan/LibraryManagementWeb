@@ -50,6 +50,12 @@ table, th, td {
 </style>
 </head>
 <body>
+<%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
 <div class="topnav" >
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
@@ -57,7 +63,7 @@ table, th, td {
 </div>
     <div >
         <fieldset id="register">
-            <legend><h3>User register</h3></legend>
+            <legend><h3>Fine register</h3></legend>
         <form action="finedetail" method="post">
         <label for="user name">Fine Range</label><br>
         <input type="text" id="text" name="text" required pattern="[0-9]{1,}"><br><br>

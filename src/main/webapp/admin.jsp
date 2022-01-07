@@ -56,7 +56,12 @@ color:white;
         
     </head>
     <body>
-    
+    <%
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
+		response.sendRedirect("index.jsp");
+	}
+	%>
       <div class="main-header">
         <div class="container">
           <h1 class="lead text-center">
