@@ -13,6 +13,6 @@ public interface UsersDao {
 	public void update(Users user);
 	public ResultSet getFine(Users user);
 	public int setFine(Users user);
-	public int forgotPassword(Users users);
+	public boolean forgotPassword(Users users);
 
 }

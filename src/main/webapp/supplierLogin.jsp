@@ -16,10 +16,12 @@ table, th, td {
         #register{
             width: 350px;
             margin-left: 600px;
+            font-size:larger;
+            color:white;
             
         }
         body{
-            background-image: url(https://st2.depositphotos.com/1105977/5461/i/600/depositphotos_54615585-stock-photo-old-books-on-wooden-table.jpg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;

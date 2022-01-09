@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Fine Calculation</title>
 <style>
         #register{
             width: 350px;
@@ -15,7 +15,7 @@
         font-size:medium;
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+            background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;

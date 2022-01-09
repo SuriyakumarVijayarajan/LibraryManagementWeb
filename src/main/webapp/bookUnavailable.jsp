@@ -14,14 +14,14 @@ text-decoration:none;
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+            background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
         }
 
     </style>
-<title>Insert title here</title>
+<title>Book Unavailable</title>
 </head>
 <body>
 <%

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Validation</title>
 <style>
         #register{
             width: 350px;
@@ -12,7 +12,7 @@
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+            background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
@@ -46,7 +46,7 @@
 <script type="text/javascript">
 var today = new Date();
 var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var mm = today.getMonth()+1; 
 var yyyy = today.getFullYear();
 if(dd<10){
   dd='0'+dd

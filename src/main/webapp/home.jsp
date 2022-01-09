@@ -6,13 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library Management</title>
     <style>
-    #homefield{
-    width:800px;
-    color:fuchsia;
-    }
-    
 *{
   box-sizing: border-box;
 }
@@ -107,7 +102,7 @@ body{
   font-size:larger;
 }
 body{
-  background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+  background-image: url('Assets/Rose-flowers-books.jpg');
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
@@ -132,10 +127,25 @@ p,pre{
 fieldset{
   width: 200px;
 }
+h1{
+color:yellow;
+text-shadow: 2px 2px #ff0000;
+}
 #foot{
   text-align: center;
 
 }
+#quotes{
+  position:relative;
+  float: right;
+  width:50%;
+  top:-450px;
+  height:50px;
+}
+#award,#contact{
+  color: red;
+}
+
 </style>
 </head>
 <body>
@@ -154,20 +164,35 @@ fieldset{
           </ul>
         </div>
       </nav>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Anna_Centenary_Library_Exterior.jpg/1200px-Anna_Centenary_Library_Exterior.jpg" width="1250px" height="800px">
-   <h3 id="award">About Us</h3>  
-   <fieldset id="homefield"><p>The Anna Centenary Library (ACL), a state-of the-art library was inaugurated on September 15, 2010 on the occasion of the 102nd birth anniversary of the former Chief Minister of Tamil Nadu Dr. C N Annadurai popularly called ‘ANNA’. By reason of his great interest towards the books and library, this library is named as ‘Anna Centenary Library’. The foundation stone laid on August 16, 2008, completed in a short span and declared open to the public from 20th September 2010.
+      <br><br><br>
+      <div id="image">
+        <img src="Assets/library.jpg" width="600px" height="450px">
+        
+  </div>
+  <div id="quotes">
+  <h1>World Leaders about Books</h1>
+    <p>"Reading is an exercise in empathy; an exercise in walking in someone else's shoes for a while." -- Malorie Blackman</p><BR>
+    <p>"Not all readers are leaders, but all leaders are readers." -- Harry S Truman</p><BR>
+    <p>"It is not true that 'we have only one life to live,' if we can read, we can live as many more lives and as many kinds of lives as we wish." -- S.I. Hayakawa</p><BR>
+    <P>"Reading is an act of civilization; it's one of the greatest acts of civilization because it takes the free raw material of the mind and builds castles of possibilities." -- Ben Okri</P><BR>
+      <P>"A book is a dream that you hold in your hand." -- Neil Gaiman</P>
+  </div>
+
+
+  <BR><BR><BR>
+  <h3 id="award" >About Us</h3>  
+   <p>The Anna Centenary Library (ACL), a state-of the-art library was inaugurated on September 15, 2010 on the occasion of the 102nd birth anniversary of the former Chief Minister of Tamil Nadu Dr. C N Annadurai popularly called ANNA. By reason of his great interest towards the books and library, this library is named as Anna Centenary Library. The foundation stone laid on August 16, 2008, completed in a short span and declared open to the public from 20th September 2010.
 
     The built up area of this centralized air-conditioned library is 3.75 lakh sq. ft., encompasses ground and eight floors. At present, it hosts five lakhs books covering wide range of subjects to serve the information needs of the public, academic and corporate community. Our Library has a Braille Section, Own Books Reading Section, Children Section, Periodicals and Newspapers Section, Tamil books Section, English Books Section and Digital Library. In addition, the library has a Conference Hall that can facilitate 150 members. </p>   
-	</fieldset>
+<br><br><br>
     <h3 id="contact">Contact Us</h3>
     <fieldset>
       <pre>The Chief Librarian & Information Officer
         Anna Centenary Library 
         Kotturpuram 
         Chennai - 600025 
-        Phone Number : 04422201011
-        Email : clbrnaclchn.dopl@tn.gov.in</pre>
+        Phone Number : 7010619606
+        Email : library@tn.gov.in</pre>
     </fieldset>
     <br><br>
 <hr>

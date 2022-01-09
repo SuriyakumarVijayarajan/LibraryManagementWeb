@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
+    <title>Add Book</title>
    <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -20,7 +20,7 @@ table, th, td {
             
         }
         body{
-            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
@@ -74,9 +74,9 @@ table, th, td {
         <label for="mobileno">Author</label><br>
         <input type="tel" id="text3" name="text3" required pattern="[A-Za-z/s]{3,}"><br><br>
         <label for="email">Price</label><br>
-        <input type="number" id="text4" name="text4" required pattern="[0-9]{1,}"><br><br>
+        <input type="number" id="text4" name="text4" required min="1" max="10000" onkeyup="if(parseInt(this.value)>10000){ this.value =10000; return false; }"><br><br>
         <label for="email">Rack Number</label><br>
-        <input type="number" id="text4" name="text5" required pattern="[0-9]{1,}"><br><br>
+        <input type="number"  id ="text4" name="text5" required min="0" max="1000" onkeyup="if(parseInt(this.value)>1000){ this.value =1000; return false; }"><br><br>
         <button type="submit">Add Book</button>
     </form>
 </fieldset>

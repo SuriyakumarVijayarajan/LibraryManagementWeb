@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.library.dao.impl.UsersDaoImpl;
 import com.library.model.Users;
@@ -35,13 +36,20 @@ public class ForgotPasswordServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		HttpSession session=request.getSession();
 		String user_name=request.getParameter("uname");
 		String password=request.getParameter("password");
 		UsersDaoImpl user=new UsersDaoImpl();
 		Users users=new Users(user_name,password);
-		user.forgotPassword(users);
-		response.sendRedirect("index.jsp");
+		boolean valid=user.forgotPassword(users);
+		if(valid) {
+			if(valid)
+			 {
+				  session.setAttribute("passchange", true);
+				  response.sendRedirect("index.jsp");
+			  }
+		}
+		
 		
 	}
 

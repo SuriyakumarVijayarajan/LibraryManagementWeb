@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Logout</title>
 <style>
         #register{
-            width: 350px;
-            margin-left: 600px;
+            width: 450px;
+            margin-left: 550px;
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+            background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
@@ -32,8 +32,36 @@
 <fieldset id="register">
 <form action="userlogout" method="post">
 <h1> Thanks for visiting us </h1>
-<button type="submit">Back to Home</button>
+<%
+request.getSession().invalidate(); %>
+
+
 </form>
 </fieldset>
+<h2 id="timehead" style="visibility:hidden;"></h2>
 </body>
+<script>
+let th = document.getElementById("timehead");
+let time =3;
+let i;
+window.addEventListener('load', () =>{
+	
+	 i= setInterval(() => {
+		if(time > 0){
+			if(time >= 10){
+				
+		th.innerHTML = "00 : " + time--;
+		
+			}else{
+				th.style.color = "red";
+				th.innerHTML = "00 : 0" + time--;
+			}
+		}else{
+			clearInterval(i);
+			window.location.assign("index.jsp");
+		}
+	},1000);
+	
+});
+</script>
 </html>

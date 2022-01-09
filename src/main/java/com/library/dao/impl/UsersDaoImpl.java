@@ -199,7 +199,7 @@ public int setFine(Users user)  {
 	
 	
 }
-public int forgotPassword(Users users) {
+public boolean forgotPassword(Users users) {
 	// TODO Auto-generated method stub
 	String query="update user_details set password=? where user_name=?";
 	try {
@@ -211,12 +211,14 @@ public int forgotPassword(Users users) {
 		int i=pstmt.executeUpdate();
 		if(i>0) {
 			System.out.println("password updated");
+			return true;
 		}
+		
 	}catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	return 1;
+	return false;
 	
 }
 
@@ -239,6 +241,21 @@ try {
 	return 1;
 }
 
+public ResultSet userList() {
+	String query="select * from user_details where user_role in 'user'";
+	try {
+			
+			Connection con=ConnectionUtil.getDBConnect();
+			PreparedStatement pstmt=con.prepareStatement(query);
+			ResultSet rs=pstmt.executeQuery();
+			return rs;
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	
+}
 
 
 }

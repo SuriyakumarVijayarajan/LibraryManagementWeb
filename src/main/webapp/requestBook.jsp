@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>New Book Request</title>
 <style>
         #register{
             width: 350px;
@@ -12,11 +12,28 @@
             
         }
         body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+            background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
         }
+        .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a {
+  background-color: black;
+  color: white;
+  float: right;
+} 
 
     </style>
 </head>
@@ -27,6 +44,10 @@
 		response.sendRedirect("index.jsp");
 	}
 	%>
+	<div class="topnav" >
+  <a class="active" href="user.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>  
+</div>
 <fieldset id="register">
 <h1>New Book Request</h1>
 <form action="requestBook" method="post" >

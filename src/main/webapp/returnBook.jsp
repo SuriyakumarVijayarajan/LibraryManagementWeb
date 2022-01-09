@@ -19,7 +19,7 @@ table, th, td {
             
         }
         body{
-            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
@@ -60,6 +60,10 @@ color:white;
 		response.sendRedirect("index.jsp");
 	}
 	%>
+	<div class="topnav" >
+  <a class="active" href="user.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>  
+</div>
 <fieldset id="register">
 <form action="bookReturn">
 
@@ -70,8 +74,9 @@ String user_name=session.getAttribute("user").toString();
 String book_name=null;
 Books books=new Books(book_name,user_name);
 rs=book.returnBookList(books);
-if(rs.next()){
-do{%><h1>The Books To be Returned</h1>
+if(rs.next()){%>
+	<h1>The Books To be Returned</h1>
+<%do{%>
 <%=rs.getString(1) %>&emsp;&ensp;<a href="bookReturn?bookreturn=<%=rs.getString(1)%>">Return Book</a><br><br>
 <%}while(rs.next());
 }else{ %>

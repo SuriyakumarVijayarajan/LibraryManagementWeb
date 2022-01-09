@@ -68,6 +68,7 @@ session.setAttribute("admin", user_name);
 		try {
 			fineamount=Integer.parseInt(rs.getString(1));
 			userwallet=Integer.parseInt(rs.getString(2));
+			session.setAttribute("oldwallet", userwallet);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

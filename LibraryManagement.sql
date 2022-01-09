@@ -109,7 +109,7 @@ alter table book_issue_details modify fine_range as (round(months_between(date_r
 
 
 
-
+desc book_issue_details;
 
 
 commit;
@@ -169,8 +169,8 @@ update book_details set book_issue_no=14 where book_code=5002;
 
 
 update user_details
-set userwallet = (userwallet - 500)
-where user_name in 'hari';
+set userwallet = (userwallet - 1000)
+where user_name in 'maari';
 delete from order_book where supplier_name in '103';
 
 create table fine_history(
@@ -192,7 +192,7 @@ commit;
 
 
 commit;
-
+desc user_details;
 
 select * from user_details;
 select * from book_details;

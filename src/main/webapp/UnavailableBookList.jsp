@@ -1,10 +1,11 @@
+<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"  import="com.library.connection.*" import ="java.util.List" import ="com.library.test.*" import="java.sql.*" import="com.library.dao.impl.*" %>
+    pageEncoding="ISO-8859-1" import="com.library.connection.*" import="com.library.dao.impl.*" import="com.library.model.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Book List</title>
+<title>List of Users</title>
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -15,6 +16,7 @@ table, th, td {
         #register{
             width: 350px;
             margin-left: 600px;
+            font-size:larger;
             
         }
         body{
@@ -22,6 +24,7 @@ table, th, td {
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
+            font-size:larger;
         }
 		button{
 		font-size:larger;
@@ -55,36 +58,38 @@ table, th, td {
 	}
 	%>
 <div class="topnav" >
-  <a class="active" href="user.jsp">Home</a>
-  <a href="Logout.jsp">Logout</a>  
+  <a class="active" href="admin.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>
+  
 </div>
-
-<%BooksDaoImpl book = new BooksDaoImpl();
-ResultSet rs = book.showBooks();%>
+<%!ResultSet rs; %>
+<h1>User List</h1>
 <table>
-<th><b><h3>BookName</h3></b></th>
-<th><b><h3>Category</h3></b></th>
-<th><b><h3>Author</h3></b></th>
-<%while(rs.next()) {
-%>
-<form action="bookName" method="post">
-<tr>
-<td><h3><%=rs.getString(1)%></h3></td>
-<td><h3><%=rs.getString(2) %></h3></td>
-<td><h3><%=rs.getString(3) %></h3></td>
-</tr>
+<th><b>Book Name</b></th>
+<th><b>Categort</b></th>
+<th><b>Author</b></th>
+<th><b>User Name</b></th>
+<th><b>Price</b></th>
+<th><b>Pre Request</b></th>
 <%
-}
-%>
-</table>
-</form>	
 
+BooksDaoImpl user = new BooksDaoImpl();
 
-
-
-
-
-
+				rs = user.unavailableBookList();
+				while(rs.next()){%>
+					
+			<tr>
+<td><%=rs.getString(2)%></td>
+<td>  <%=rs.getString(3) %></td>
+<td>  <%=rs.getString(4) %></td>
+<td>  <%=rs.getString(8) %></td>
+<td>  <%=rs.getString(5) %></td>
+<td>  <%=rs.getString(10) %></td>
+</tr>	
+				
+			<%} %>
+			
+			</table>
 
 </body>
 </html>

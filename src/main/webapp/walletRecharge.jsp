@@ -7,15 +7,26 @@
 <title>Insert title here</title>
 <style>
         #register{
+        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+            background-repeat: no-repeat;
             width: 350px;
+            margin-top:50px;
             margin-left: 600px;
             
         }
-        body{
-            background-image: url(https://www.crl.edu/sites/all/themes/crl_bootstrap/images/hero3.jpeg);
+
+       html
+        {
+          background-image:url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
+            font-size:larger;
+        }
+        button,a{
+        font-size:medium;
+        text-decoration:none;
+        color:black;
         }
 
     </style>
@@ -29,14 +40,22 @@
 	%>
 <fieldset id="register">
 <h1>Welcome</h1>
-	<form>
-	<p>Welcome your walletamount is very low</p>
+<%int walletold=(int)session.getAttribute("oldwallet");
+String name=session.getAttribute("user").toString(); %>
+	<p><%=name %> your walletamount is <%=walletold%> .It is very low</p>
 	<p>You have to recharge your wallet to enter in to library</p>
 	<p>Are you ready to pay </p>
-	<button type="submit"><a href="index.jsp">Pay later</a></button>
-	<button type="submit"><a href="loginwallet.jsp">Pay now</a></button>
-	</form>
-		<button><a href="Logout.jsp">logout</a></button>	
-</fieldset>
+	<button type="submit"><a href="loginwallet.jsp">Pay now</a></button>&emsp;
+	<button type="submit"><a href="index.jsp">Pay later</button>&emsp;
+	<button><a href="Logout.jsp">Logout</a></button>
+			
+
 </body>
+<script>
+
+function fieldhid(){
+let field = document.getElementById("card");
+field.style.visibility = "visibile";
+}
+</script>
 </html>

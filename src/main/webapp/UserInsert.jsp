@@ -17,10 +17,11 @@ table, th, td {
         #register{
             width: 350px;
             margin-left: 600px;
+            font-size:larger;
             
         }
         body{
-            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
             color:white;

@@ -384,6 +384,55 @@ public void delete(Books book) {
 		
 		return rs;
 	}
+	public ResultSet availableBookList() {
+		String query="select * from book_details where availability in 'available'";
+		ResultSet rs=null;
+		try {
+			Connection con=ConnectionUtil.getDBConnect();
+			PreparedStatement pstmt=con.prepareStatement(query);
+			rs=pstmt.executeQuery();
+			return rs;
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
+	
+	public ResultSet unavailableBookList() {
+		String query="select * from book_details where availability in 'unavailable'";
+		ResultSet rs=null;
+		try {
+			Connection con=ConnectionUtil.getDBConnect();
+			PreparedStatement pstmt=con.prepareStatement(query);
+			rs=pstmt.executeQuery();
+			return rs;
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
+	public ResultSet BookList() {
+		String query="select * from book_details";
+		ResultSet rs=null;
+		try {
+			Connection con=ConnectionUtil.getDBConnect();
+			PreparedStatement pstmt=con.prepareStatement(query);
+			rs=pstmt.executeQuery();
+			return rs;
+			
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
 
 
 	

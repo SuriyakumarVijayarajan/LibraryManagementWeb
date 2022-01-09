@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Borrow Book</title>
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -18,7 +18,7 @@ table, th, td {
             
         }
         body{
-            background-image: url(https://wallup.net/wp-content/uploads/2017/03/28/401002-rose-flowers-books.jpg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
@@ -54,7 +54,7 @@ table, th, td {
 	}
 	%>
 <div class="topnav" >
-  <a class="active" href="admin.jsp">Home</a>
+  <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
 <fieldset id="register">
