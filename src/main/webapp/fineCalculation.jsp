@@ -39,7 +39,7 @@ if (fineOf > 0) {
 	user_name=session.getAttribute("user").toString();
 %>
 	<%=user_name %><p>you have fine of rs</p><%=fineOf %>
-	<p>	You want to pay now or later</p>
+	<p>	You have to pay now</p>
 	<button type="submit"><a href="returnSuccess.jsp">Pay now</a></button>
 	<%}else{
 	response.sendRedirect("returnSuccess.jsp");} %>

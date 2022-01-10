@@ -78,6 +78,7 @@ session.setAttribute("admin", user_name);
 		session.setAttribute("loginfine", fineamount);
 		
 		if(userwallet>500) {
+			session.setAttribute("userWalletLogin", userwallet);
 			resp.sendRedirect("user.jsp");
 			}
 		else if(userwallet<=500) {

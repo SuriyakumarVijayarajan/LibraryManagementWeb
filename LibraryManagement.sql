@@ -165,11 +165,11 @@ alter table book_issue_details modify book_issue_no int default BISEQ.nextval;
 alter table book_issue_details drop column book_issue_no;
 delete from book_issue_details where fine_range_in_month in 12;
 alter table book_issue_details add book_issue_no int generated always as identity(start with 1 increment by 1);
-update book_details set book_issue_no=14 where book_code=5002;
+update book_details set prerequest='none' where prerequest='mani';
 
 
 update user_details
-set userwallet = (userwallet - 1000)
+set userwallet = (userwallet - 1500)
 where user_name in 'maari';
 delete from order_book where supplier_name in '103';
 
@@ -181,6 +181,7 @@ commit;
 select * from fine_history;
 select * from user_details;
 select * from book_details;
+delete from supplier_details where supplier_name in 'ajithkumar';
 select book_title from book_details where availability in 'available' and prerequest is  null or prerequest in 'hari';
 alter table user_details add userWallet int default 1000;
 alter table user_details drop column userWallet;

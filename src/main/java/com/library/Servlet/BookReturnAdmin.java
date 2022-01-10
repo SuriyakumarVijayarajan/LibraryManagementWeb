@@ -15,6 +15,8 @@ import com.library.dao.impl.BookIssueDaoImpl;
 import com.library.dao.impl.FineHistoryDaoImpl;
 import com.library.dao.impl.FinesDaoImpl;
 import com.library.dao.impl.UsersDaoImpl;
+import com.library.exception.InvalidFineException;
+import com.library.exception.InvalidUserException;
 import com.library.model.BookIssue;
 import com.library.model.Fines;
 import com.library.model.Users;
@@ -70,6 +72,20 @@ public class BookReturnAdmin extends HttpServlet {
 			BookIssue bi1=new BookIssue(book_issue_no,date_returned,book_title);
 			BookIssueDaoImpl bookIssue=new BookIssueDaoImpl();
 			int userFine = bookIssue.returnBookIssue(bi1);
+			if(userFine>12) {
+				try {
+					String userName=session.getAttribute("user").toString();
+					Users users=new Users(userName);
+					user.delete(users);
+					throw new InvalidFineException();
+				}catch(InvalidFineException e) {
+					System.out.println("hi");
+					String validate=e.getMessage();
+					System.out.println(validate);
+					response.sendRedirect(validate);
+					
+				}
+			}
 			System.out.println(userFine);
 			Fines f1 = new Fines(userFine);
 			FinesDaoImpl fine=new FinesDaoImpl();
@@ -83,12 +99,13 @@ public class BookReturnAdmin extends HttpServlet {
 			try {
 				ResultSet rs= user.getFine(u3);
 				fineOf=rs.getInt(1);
+				session.setAttribute("fineamount", fineOf);
+				response.sendRedirect("fineCalculation.jsp");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			session.setAttribute("fineamount", fineOf);
-			response.sendRedirect("fineCalculation.jsp");
+			
 			
 		
 	

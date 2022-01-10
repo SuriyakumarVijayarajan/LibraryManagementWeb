@@ -86,6 +86,21 @@ table, th, td {
     display: flex;
   }
 }
+#left{
+position:relative;
+float:left;
+}
+#left li a:hover{
+background-color: gray;
+color:black;
+}
+#right li a:hover{
+background-color: gray;
+color:black;
+}
+#right{
+position:relative;
+float:right;}
 
         #register{
             width: 350px;
@@ -113,6 +128,53 @@ table, th, td {
   background-color: #ddd;
   color: black;
   
+}
+.right{
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position:absolute;
+    background-color:white;
+    background-position: center;
+    background-size: cover;
+    color:black;
+    right:5px;
+    
+
+}
+li{
+    
+   
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+li:hover{
+    transform: translateY(-20px);
+}
+.left{
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position:absolute;
+    background-color:white;
+    background-position: center;
+    background-size: cover;
+    color:black;
+    left:5px;
+    
+
 }
 a{
 
@@ -157,33 +219,37 @@ color:white;
         </div>
       </div id="admin1">
       <ul type="none">
+      <div id="left">
             <li>
-              <a href="authorShowBook.jsp">Show Books</a>
+              <a href="authorShowBook.jsp" class="left">Show Books</a>
             </li><br><br>
             <li>
-              <a href="addBook.jsp">Add Books</a>
+              <a href="addBook.jsp" class="left" style="background-color: black; color:white; margin-top:25px;">Add Books</a>
             </li><br><br>
             <li>
-              <a href="supplier.jsp">Add Supplier Details</a>
+              <a href="supplier.jsp" class="left" style="margin-top:50px;">Add Supplier Details</a>
             </li><br><br>
             <li>
-              <a href="FineHistory.jsp">Add Fine Details</a>
+              <a href="FineHistory.jsp" class="left" style="background-color: black; color:white; margin-top:75px;">Add Fine Details</a>
             </li><br><br>
             <li>
-              <a href="UserInsert.jsp">Add User</a>
+              <a href="UserInsert.jsp" class="left" style="margin-top:100px;">Add User</a>
+            </li><br><br>
+            </div>
+            <div id="right">
+            <li>
+              <a href="showFineHistory.jsp" class="right">View Fine History</a>
             </li><br><br>
             <li>
-              <a href="showFineHistory.jsp">View Fine History</a>
+              <a href="UserList.jsp" class="right" style="background-color: black; color:white; margin-top:25px;">View All Users</a>
             </li><br><br>
             <li>
-              <a href="UserList.jsp">View All Users</a>
+              <a href="AvailableBookList.jsp" class="right" style="margin-top:50px;">View Available Books</a>
             </li><br><br>
             <li>
-              <a href="AvailableBookList.jsp">View Available Books</a>
+              <a href="UnavailableBookList.jsp" class="right" style="background-color: black; color:white; margin-top:75px;">View Unavailable Books</a>
             </li><br><br>
-            <li>
-              <a href="UnavailableBookList.jsp">View Unavailable Books</a>
-            </li><br><br>
+            </div>
         </ul>
         </nav>
         </div>

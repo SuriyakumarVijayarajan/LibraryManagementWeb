@@ -5,12 +5,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Fine History</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 20px;
+}
+.table tr:hover{
+color:black;
+background-color: white;
 }
 
         #register{
@@ -47,7 +54,7 @@ table, th, td {
   float: right;
 }   
 </style>
-</head>
+</head>.
 <body>
 <%
 	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
@@ -61,8 +68,9 @@ table, th, td {
   
 </div>
 <%!ResultSet rs; %>
+<div class="container">
 <h1>Fine History</h1>
-<table>
+<table class="table table-hover" style="color:white;">
 <th><b>User Name</b></th>
 <th><b>Fine Amount</b></th>
 <th><b>Collected Time</b></th>
@@ -82,6 +90,6 @@ FineHistoryDaoImpl fineHist = new FineHistoryDaoImpl();
 			<%} %>
 			
 			</table>
-
+</div>
 </body>
 </html>

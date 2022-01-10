@@ -9,15 +9,24 @@ a{
 text-decoration:none;
 }
         #register{
+        background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
             width: 350px;
             margin-left: 600px;
+            color:white;
             
+        }
+        a{
+        color:white;
+        }
+        #but{
+        color:black;
+        font-size:medium;
         }
         body{
             background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
 
     </style>
@@ -35,8 +44,8 @@ text-decoration:none;
 
 <a href="bookPreRequest.jsp">Prerequest Book</a><br><br>
 <a href="user.jsp">Back to user Page</a><br><br>
-<a href="showBook.jsp">Back to view Books</a>
-<button><a href="Logout.jsp">logout</a></button>
+<a href="showBook.jsp">Back to view Books</a><br><Br>
+<button><a href="Logout.jsp" id="but">Logout</a></button>
 </fieldset>
 
 </body>

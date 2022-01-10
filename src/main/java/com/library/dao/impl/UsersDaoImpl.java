@@ -112,12 +112,12 @@ public String fetch(Users user) {
 
 public void delete(Users user)  {
 	
-	String query="delete from user_details where user_id=?";
+	String query="update user_details set user_role='invalid' where user_name in ?";
 	try {
 	Connection con=ConnectionUtil.getDBConnect();
 	PreparedStatement pstmt = con.prepareStatement(query);
 	
-	pstmt.setString(1,user.getPassword());
+	pstmt.setString(1,user.getUser_name());
 	
      int i = pstmt.executeUpdate();
 	

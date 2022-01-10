@@ -7,15 +7,16 @@
 <title>Insert title here</title>
 <style>
         #register{
+        background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
             width: 350px;
             margin-left: 600px;
-            
+            margin-top:150px;
         }
         body{
             background-image: url(Assets/Bgimage.jpeg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
 
    .topnav a:hover {

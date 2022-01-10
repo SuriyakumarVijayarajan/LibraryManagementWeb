@@ -14,6 +14,7 @@ table, th, td {
 }
 
         #register{
+        background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
             width: 350px;
             margin-left: 600px;
             font-size:larger;

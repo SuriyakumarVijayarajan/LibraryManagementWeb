@@ -61,6 +61,10 @@ color:white;
 
 <%BooksDaoImpl book = new BooksDaoImpl();
 ResultSet rs = book.showBooks();%>
+<div class="topnav" >
+  <a class="active" href="user.jsp">Home</a>
+  <a href="Logout.jsp">Logout</a>  
+</div>
 <table>
 <th><b>BookName</b></th>
 <th><b>Category</b></th>
@@ -82,8 +86,6 @@ ResultSet rs = book.showBooks();%>
 
 
 
-<a href="user.jsp">User Home</a>
-<button><a href="Logout.jsp">logout</a></button>
 
 
 

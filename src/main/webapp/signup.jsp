@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         #register{
         background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
@@ -14,11 +18,11 @@
             margin-left: 600px;
             font-size:larger;
             color:white;
-            
+            margin-top:25px;
         }
         body{
         
-            background-image: url(Assets/Bgimage.jpeg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
             background-repeat: no-repeat;
             background-size:cover;
             color:springgreen;
@@ -47,8 +51,8 @@
 </style>
 </head>
 <body>
+
 <div class="topnav" >
-  <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
   
 </div>
@@ -57,6 +61,7 @@
         <fieldset id="register">
             <legend><h3>User register</h3></legend>
         <form action="index1" method="post" >
+        <div class="container mt-3">
         <label for="user name">User name</label><br>
         <input type="text" id="text" name="text" required pattern="[A-Za-z]{3,}" ><br><br>
         <label for="city">City</label><br>
@@ -68,7 +73,8 @@
         <input type="number" id="text3" name="text3" required pattern="[6-9][0-9]{9}"><br><br>
         <label for="email">Email Id</label><br>
         <input type="email" id="text4" name="text4" required pattern="([a-zA-Z0-9]+[@][a-zA-Z]+[.][a-z]+{15,40})"><br><br>
-        <input type="submit" value="sign up">
+        <button type="submit" value="sign up" class="btn btn-primary"> Sign Up</button>
+        </div>
     </form>
 </fieldset>
 

@@ -7,14 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         #field1{
          background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
-            width: 300px;
+            width: 500px;
             color: white;
             float:left;
             font-size:20px;
-            margin-left:530px;
+            margin-left:465px;
             border-radius:20px;
             margin-top:80px;
             
@@ -37,7 +39,7 @@
         color:black;
         }
        button{
-        width: 100px;
+        width: 150px;
             text-decoration:none;
         }
         #forgot{
@@ -56,17 +58,17 @@
     
     <div>
          <fieldset id="field1">
-        <legend style="font-size: 20px;background-color:brown;color:white;">Log In</legend>
+        <legend style="font-size: 20px;color:white;">Log In</legend>
         <form action="signup11" method="post">
             
             <br>
-    <label for="User Name" style="background-color:brown;color:white;"><h3>User Name</h3></label>
-    <input type="text" id = "uname" name="uname" pattern="[A-Za-z\s]{3,}" required ><br>
-    <label for= "password"style="background-color:brown;color:white;"	><h3>Password</h3></label>
-    <input type="password" id="password" name="password" pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$" required><br><br>
+    <label for="User Name" style="color:white;"><h3>User Name</h3></label>
+    <input type="text" id = "uname" name="uname" pattern="[A-Za-z\s]{3,}" required class="form-control form-control-lg"><br>
+    <label for= "password"style="color:white;"	><h3>Password</h3></label>
+    <input type="password" id="password" name="password" pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$" class="form-control form-control-lg"	 required><br><br>
     <button type="submit">Log In</button>
     
-    <button id="forgot"><a href="ForgotPassword.jsp" style="color:black;">Forgot Password</a></button>
+    <button id="forgot" style="width:200px;"><a href="ForgotPassword.jsp" style="color:black;">Forgot Password</a></button><br><br>
     <h3>New user <a href="signup.jsp">Sign Up </a>here</h3>
 
         </form>

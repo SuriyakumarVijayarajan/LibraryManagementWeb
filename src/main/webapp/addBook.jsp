@@ -68,11 +68,11 @@ table, th, td {
         <label for="user name">Book Code</label><br>
         <input type="text" id="text" name="text" required pattern="[0-9]{3,}"><br><br>
         <label for="city">Book Name</label><br>
-        <input type="text" id="text1" name="text1" required pattern="[A-Za-z/s]{3,}"><br><br>
+        <input type="text" id="text1" name="text1" required pattern="[A-Za-z\s]{3,}"><br><br>
         <label for="password">Category</label><br>
         <input type="text" id="text2" name="text2" required pattern="[A-Za-z]{3,}"><br><br>
         <label for="mobileno">Author</label><br>
-        <input type="tel" id="text3" name="text3" required pattern="[A-Za-z/s]{3,}"><br><br>
+        <input type="tel" id="text3" name="text3" required pattern="[A-Za-z\s]{3,}"><br><br>
         <label for="email">Price</label><br>
         <input type="number" id="text4" name="text4" required min="1" max="10000" onkeyup="if(parseInt(this.value)>10000){ this.value =10000; return false; }"><br><br>
         <label for="email">Rack Number</label><br>

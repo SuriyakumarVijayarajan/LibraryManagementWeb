@@ -15,6 +15,10 @@ body{
   margin: 0;
   padding: 0;
 }
+#about{
+background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+width:1250px;
+}
 .navbar{
   display: flex;
   justify-content: space-between;
@@ -148,7 +152,7 @@ text-shadow: 2px 2px #ff0000;
 
 </style>
 </head>
-<body>
+<body id="top">
     <nav class="navbar">
         <div class='brand-title'>Library Management</div>
         <a href='#' class='toggle-btn' id='toggle-btn'>
@@ -180,10 +184,47 @@ text-shadow: 2px 2px #ff0000;
 
 
   <BR><BR><BR>
-  <h3 id="award" >About Us</h3>  
-   <p>The Anna Centenary Library (ACL), a state-of the-art library was inaugurated on September 15, 2010 on the occasion of the 102nd birth anniversary of the former Chief Minister of Tamil Nadu Dr. C N Annadurai popularly called ANNA. By reason of his great interest towards the books and library, this library is named as Anna Centenary Library. The foundation stone laid on August 16, 2008, completed in a short span and declared open to the public from 20th September 2010.
+   
+  <fieldset id="about">
+  <h2 id="award" >About Us:</h2> 
+  
+  <p> &emsp;&emsp;The Anna Centenary Library (ACL), a state-of the-art library was inaugurated on September 15, 2010 on the occasion of the 102nd birth anniversary of the former Chief Minister of Tamil Nadu Dr. C N Annadurai popularly called ANNA. By reason of his great interest towards the books and library, this library is named as Anna Centenary Library. The foundation stone laid on August 16, 2008, completed in a short span and declared open to the public from 20th September 2010.
 
-    The built up area of this centralized air-conditioned library is 3.75 lakh sq. ft., encompasses ground and eight floors. At present, it hosts five lakhs books covering wide range of subjects to serve the information needs of the public, academic and corporate community. Our Library has a Braille Section, Own Books Reading Section, Children Section, Periodicals and Newspapers Section, Tamil books Section, English Books Section and Digital Library. In addition, the library has a Conference Hall that can facilitate 150 members. </p>   
+    The built up area of this centralized air-conditioned library is 3.75 lakh sq. ft., encompasses ground and eight floors. At present, it hosts five lakhs books covering wide range of subjects to serve the information needs of the public, academic and corporate community. Our Library has a Braille Section, Own Books Reading Section, Children Section, Periodicals and Newspapers Section, Tamil books Section, English Books Section and Digital Library. </p><p>In addition, the library has a Conference Hall that can facilitate 150 members.  Our Library Auditorium is the most prestigious Auditorium of Chennai. This fully Air Conditioned Auditorium is an elegant structure with aesthetically designed Public Areas, Main Hall, Green Rooms, etc.
+
+</p><p>The Auditorium stage is ideal for demanding theatrical performances. To enable quick change of scenes and sets as well as elobarate lighting design.
+
+</p><p>The Auditorium has excellent acoustics. It is furthermore equipped with a professional quality sound system, Sound craft Mixer. Auditorium also has its own sophisticated stage lighting with a large variety of professional lights.
+
+</p><p>Auditorium has an elaborate CCTV system. Auditorium can accommodate 1100 people. A projector with latest technology is available in the auditorium to screen the movie, other than main projector 2 LCD projectors with separate screens are available at main auditorium hall. It has surround sound system and very good lighting facility to conduct any type of programme.
+
+
+
+
+
+Amphitheatre
+
+
+The crescent shaped amphitheater with a seating capacity of more than 800 people available at our library. It is equipped with world-class acoustics and a state-of-the-art lighting system.
+
+The stage is a versatile option for product launches, celebrity gatherings, corporate events, and entertainment spectacles. a rehearsal room and green rooms contain complete support facilities.
+
+
+Conference Hall:
+
+
+
+Simple elegance and modern design make the  Conference Hall a premier site of events that require a higher standard of refinement. Its spacious capacity accommodates up to 151 people for Conference and Seminar. Flexible equipment and furnishings can be customized to meet the needs of any event, whether it is a conference, seminar or any presentation, or business meeting. It has LCD projector and LCD Panel for presentation.
+
+
+
+Mini Conference Halls:
+
+Capacity minimum 30 people
+
+
+     </p>   
+</fieldset>
 <br><br><br>
     <h3 id="contact">Contact Us</h3>
     <fieldset>
@@ -195,6 +236,8 @@ text-shadow: 2px 2px #ff0000;
         Email : library@tn.gov.in</pre>
     </fieldset>
     <br><br>
+    
+    <a href="#top" style="color:white;">Back To Top</a>
 <hr>
     <footer>
       <pre id="foot">
