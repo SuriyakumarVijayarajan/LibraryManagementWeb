@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -16,7 +18,8 @@ table, th, td {
 
         #register{
             width: 350px;
-            margin-left: 600px;
+            margin-left: 350px;
+            
             
         }
         body{
@@ -24,6 +27,9 @@ table, th, td {
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
+        }
+        label{
+        font-size:larger;
         }
 		button{
 		font-size:larger;
@@ -46,7 +52,15 @@ table, th, td {
   background-color: black;
   color: white;
   float: right;
-}   
+}  
+form{
+border:2px solid white;
+border-radius: 10px;
+width:500px;
+background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+} 
+input{
+border:2px solidx;}
 </style>
 </head>
 <body>
@@ -61,23 +75,26 @@ table, th, td {
   <a href="Logout.jsp">Logout</a>
   
 </div>
-    <div >
+    <div class="container mt-1" >
         <fieldset id="register">
-        <legend><h3>Book register</h3></legend>
+        
         <form action="addBook" method="post">
+        <div class="container mt-1">
+        <legend><h3>Book register</h3></legend>
         <label for="user name">Book Code</label><br>
-        <input type="text" id="text" name="text" required pattern="[0-9]{3,}"><br><br>
+        <input type="text" id="text" name="text" required pattern="[0-9]{3,}" class="form-control"><br>
         <label for="city">Book Name</label><br>
-        <input type="text" id="text1" name="text1" required pattern="[A-Za-z\s]{3,}"><br><br>
+        <input type="text" id="text1" name="text1" required pattern="[A-Za-z\s]{3,}" class="form-control"><br>
         <label for="password">Category</label><br>
-        <input type="text" id="text2" name="text2" required pattern="[A-Za-z]{3,}"><br><br>
+        <input type="text" id="text2" name="text2" required pattern="[A-Za-z]{3,}" class="form-control"><br>
         <label for="mobileno">Author</label><br>
-        <input type="tel" id="text3" name="text3" required pattern="[A-Za-z\s]{3,}"><br><br>
+        <input type="tel" id="text3" name="text3" required pattern="[A-Za-z\s]{3,}" class="form-control"><br>
         <label for="email">Price</label><br>
-        <input type="number" id="text4" name="text4" required min="1" max="10000" onkeyup="if(parseInt(this.value)>10000){ this.value =10000; return false; }"><br><br>
+        <input type="number" id="text4" name="text4" required min="1" max="10000" class="form-control" onkeyup="if(parseInt(this.value)>10000){ this.value =10000; return false; }"><br>
         <label for="email">Rack Number</label><br>
-        <input type="number"  id ="text4" name="text5" required min="0" max="1000" onkeyup="if(parseInt(this.value)>1000){ this.value =1000; return false; }"><br><br>
+        <input type="number"  id ="text4" name="text5" required min="0" max="1000" class="form-control" onkeyup="if(parseInt(this.value)>1000){ this.value =1000; return false; }"><br>
         <button type="submit">Add Book</button>
+        </div>
     </form>
 </fieldset>
 

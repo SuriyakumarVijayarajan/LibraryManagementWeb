@@ -89,6 +89,10 @@ public LocalDate getDate_returned() {
 	public int getFine_range() {
 		return fine_range;
 	}
+	public BookIssue(String user_name) {
+		super();
+		this.user_name = user_name;
+	}
 	public void setFine_range(int fine_range) {
 		this.fine_range = fine_range;
 	}

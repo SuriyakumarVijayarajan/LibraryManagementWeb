@@ -8,7 +8,11 @@
 <meta name="viewport" content="width-device-width, inital-scale=1">
 
 <head>
-
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <%
 String user = session.getAttribute("user").toString();
 %>
@@ -19,9 +23,10 @@ table, th, td {
 	border-collapse: collapse;
 	padding: 20px;
 }
-*{
-margin:0px;
-padding:0px;
+
+* {
+	margin: 0px;
+	padding: 0px;
 }
 
 @media ( max-width : 600px) {
@@ -32,7 +37,7 @@ padding:0px;
 		display: none;
 		width: 100%;
 	}
-	.navbar {
+	.navitem {
 		flex-direction: column;
 		align-items: flex-start;
 	}
@@ -130,10 +135,13 @@ button {
 		response.sendRedirect("index.jsp");
 	}
 	%>
-	<center><h1 class="lead text-center">
-		Welcome to Library Management System!
-		<%=user%>
-	</h1></center><br>
+	<center>
+		<h1>
+			Welcome to Library Management System!
+			<%=user%>
+		</h1>
+	</center>
+	<br>
 	<div class="topnav">
 
 
@@ -141,14 +149,13 @@ button {
 			<div class="container">
 
 				<div id="admin1">
-					<nav class="navbar">
+					<nav class="navitem">
 						<div class='navbar-links' id='navbar-links'>
-							 <a href="SearchBook.jsp">Search Books</a>
-								 <a href="showBook.jsp">View Books</a>
-								  <a href="borrowBook.jsp">Borrow Book</a> 								 
-								<a href="returnBook.jsp">Return Book</a> 
-								<a href="requestBook.jsp">Request New Book</a>
-								 <a href="Logout.jsp" style="float: right;">Logout</a>
+							<a href="SearchBook.jsp">Search Books</a> <a href="showBook.jsp">View
+								Books</a> <a href="borrowBook.jsp">Borrow Book</a> <a
+								href="returnBook.jsp">Return Book</a> <a href="requestBook.jsp">Request
+								New Book</a> <a href="userHistory.jsp">View Book Borrow History</a>
+							<a href="Logout.jsp" style="float: right;">Logout</a>
 
 
 
@@ -157,14 +164,21 @@ button {
 					</nav>
 				</div>
 			</div>
-			</header>
+			
 
 		</div>
-		<%String userWallet=session.getAttribute("userWalletLogin").toString(); %>
-		</div>
-		<br><br><br><br>
-		<h1>Your User Wallet Amount is <%=userWallet%></h1>
-		
-		
+		<%
+		String userWallet = session.getAttribute("userWalletLogin").toString();
+		%>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h1>
+		Your User Wallet Amount is
+		<%=userWallet%></h1>
+
+
 </body>
 </html>

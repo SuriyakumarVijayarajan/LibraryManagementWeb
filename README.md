@@ -10,8 +10,12 @@ To borrow and return Book
 * Return Book
 * Request New Book
 * Pre Request Book
+* Fine Calculation
+* Filter Books by Category
+* Filter Books by Author
 * Fine Payment
-* Filter Books
+* Wallet Recharge
+* Forgot Password
 
 ## Admin
 

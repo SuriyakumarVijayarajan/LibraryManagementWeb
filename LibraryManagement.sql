@@ -169,7 +169,7 @@ update book_details set prerequest='none' where prerequest='mani';
 
 
 update user_details
-set userwallet = (userwallet - 1500)
+set userwallet = (userwallet - 500)
 where user_name in 'maari';
 delete from order_book where supplier_name in '103';
 

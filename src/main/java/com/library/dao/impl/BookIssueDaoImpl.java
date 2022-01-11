@@ -132,5 +132,29 @@ public int returnBookIssue(BookIssue bookIssue) {
 	
 }
 
+public ResultSet userHistory(BookIssue book) {
+	
+
+	String query="select * from book_issue_details where user_name in ?";
+	try {
+	Connection con=ConnectionUtil.getDBConnect();
+	PreparedStatement pstmt = con.prepareStatement(query);
+	
+	pstmt.setString(1, book.getUser_name());
+	
+     ResultSet rs = pstmt.executeQuery();
+     return rs;
+
+
+	}catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+	return null;
+	
+}
+
 
 }
