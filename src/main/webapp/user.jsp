@@ -28,7 +28,9 @@ table, th, td {
 	margin: 0px;
 	padding: 0px;
 }
-
+#capital{
+text-transform:capitalize;
+}
 @media ( max-width : 600px) {
 	.toggle-btn {
 		display: flex;
@@ -136,7 +138,7 @@ button {
 	}
 	%>
 	<center>
-		<h1>
+		<h1 id="capital">
 			Welcome to Library Management System!
 			<%=user%>
 		</h1>

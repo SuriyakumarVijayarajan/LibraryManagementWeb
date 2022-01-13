@@ -5,6 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Book List</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -27,6 +30,18 @@ table, th, td {
 		button{
 		font-size:larger;
 		}
+		.table tabl-hover{
+font-size:larger;
+}
+.table tr{
+color:white;
+}
+
+.table tr:hover{
+color:black;
+background-color:white; 
+
+}
 		.topnav a {
   float: left;
   color: #f2f2f2;
@@ -45,7 +60,10 @@ table, th, td {
   background-color: black;
   color: white;
   float: right;
-}   
+}
+th{
+font-style: italic;
+color:black;}   
 </style>
 </head>
 <body>
@@ -62,7 +80,8 @@ table, th, td {
 
 <%BooksDaoImpl book = new BooksDaoImpl();
 ResultSet rs = book.showBooks();%>
-<table>
+<div class="container-fluid">
+<table class="table table-hover" style="font-size:larger;">
 <th><b><h3>BookName</h3></b></th>
 <th><b><h3>Category</h3></b></th>
 <th><b><h3>Author</h3></b></th>
@@ -78,6 +97,7 @@ ResultSet rs = book.showBooks();%>
 }
 %>
 </table>
+</div>
 </form>	
 
 

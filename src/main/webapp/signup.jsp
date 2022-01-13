@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -18,12 +16,15 @@
             margin-left: 600px;
             font-size:larger;
             color:white;
-            margin-top:25px;
+            position:absolute;
+            right:100px;
+            top:70px;
         }
         body{
-        
+            height:100vh;
             background-image: url(Assets/Rose-flowers-books.jpg);
             background-repeat: no-repeat;
+            background-position:center;
             background-size:cover;
             color:springgreen;
         }
@@ -59,21 +60,42 @@
 
     <div >
         <fieldset id="register">
-            <legend><h3>User register</h3></legend>
-        <form action="index1" method="post" >
-        <div class="container mt-3">
-        <label for="user name">User name</label><br>
-        <input type="text" id="text" name="text" required pattern="[A-Za-z]{3,}" ><br><br>
-        <label for="city">City</label><br>
-        <input type="text" id="text1" name="text1" required pattern="[A-Za-z]{3,}" ><br><br>
-        <label for="password">Password</label><br>
-        <input type="password" id="text2" name="text2" required pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$"><br><br>
-        <label for="mobileno">Mobile number</label><br>
+            <legend><h2>User register</h2></legend>
+            <hr>
+        <form action="index1" method="post" class="was-validated">
+        <div class="container mt-1">
+        <div class="mb-1 mt-1">
+        <label for="user name" class="form-label">User name</label><br>
+        <input type="text" id="text" name="text" class="form-control" required pattern="[A-Za-z]{3,}" >
+        </div>
+        <div class="mb-1 mt-1">
+        <label for="city" class="form-label" >City</label><br>
+        <input type="text" id="text1" class="form-control" name="text1" required pattern="[A-Za-z]{3,}" >
+        </div>
+        <div class="mb-1 mt-1">
+        <label for="password" class="form-label">Password</label><br>
+        <input type="password" id="text2" class="form-control" name="text2" required pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$">
+        </div>
+        <div class="mb-1 mt-1">
+        <label for="mobileno" class="form-label">Mobile number</label><br>
+        <input type="number" id="text3" class="form-control" name="text3" required pattern="[6-9][0-9]{9}">
+        </div>
+        <div class="mb-1 mt-1">
+        <label for="email" class="form-label" >Email Id</label><br>
+        <input type="email" id="text4" name="text4"  class="form-control" required pattern="([a-zA-Z0-9]+[@][a-zA-Z]+[.][a-z]+{15,40})">
+        </div>
         
-        <input type="number" id="text3" name="text3" required pattern="[6-9][0-9]{9}"><br><br>
-        <label for="email">Email Id</label><br>
-        <input type="email" id="text4" name="text4" required pattern="([a-zA-Z0-9]+[@][a-zA-Z]+[.][a-z]+{15,40})"><br><br>
+        <div class="form-check mb-3">
+        <h6>You Have to pay 1000rs as Entry Charge to enter Library</h6>
+    <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+    
+    <label class="form-check-label" for="myCheck">I agree on the terms and conditions.</label>
+    <div class="valid-feedback">Valid.</div>
+        </div>
+        
+        <div class="mb-3 mt-3">
         <button type="submit" value="sign up" class="btn btn-primary"> Sign Up</button>
+        </div>
         </div>
     </form>
 </fieldset>

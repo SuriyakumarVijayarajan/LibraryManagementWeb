@@ -78,6 +78,7 @@ table, th, td {
 </div>
 <%!ResultSet rs; %>
 <h1>User List</h1>
+<div class="container-fluid">
 <table class="table table-hover" style="font-size:larger;">
 <th><b>User Name</b></th>
 <th><b>City</b></th>
@@ -102,6 +103,6 @@ UsersDaoImpl user = new UsersDaoImpl();
 			<%} %>
 			
 			</table>
-
+</div>
 </body>
 </html>

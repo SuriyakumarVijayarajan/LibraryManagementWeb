@@ -92,6 +92,7 @@ session.setAttribute("admin", user_name);
 		try {
 			throw new InvalidUserException();
 		}catch(InvalidUserException e) {
+			session.setAttribute("invalidUser", "invalid");
 			String validate=e.getMessage();
 			resp.sendRedirect(validate);
 			

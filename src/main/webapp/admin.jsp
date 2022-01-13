@@ -1,260 +1,179 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width, inital-scale=1">
-    <head><%String admin=session.getAttribute("admin").toString(); %>
-    <title>Welcome <%=admin %></title>
-      <style type="text/css">
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 20px;
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width, inital-scale=1">
+<head>
+<%String admin=session.getAttribute("admin").toString(); %>
+<title>Welcome <%=admin %></title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	background-image:
+		url(Assets/adminpage.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
 }
 
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-}
-.brand-title{
-  font-size: 1.5rem;
-  margin: .5rem;
-}
-.navbar-links ul{
-  margin: 0;
-  padding: ;
-  display: flex;
-  align-items: center;
-}
-.navbar-links li{
-  list-style: none;
-}
-.navbar-links li a{
-  text-decoration: none;
-  color : white;
-  padding: 1rem;
-  display: bolck;
-}
-.navbar-links li:hover{
-  background-color: black;
-}
-.toggle-btn{
-  position: absolute;
-  top: .75rem;
-  right: 1rem;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 31px;
-  height: 21px
-}
-.toggle-btn .bar{
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
+.main {
+	margin-left: 160px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
 }
 
-@media(max-width: 600px){
-  .toggle-btn{
-    display: flex;
-  }
-  .navbar-links{
-    display: none;
-    width: 100%;
-  }
-  .navbar{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar-links ul{
-    width: 100%;
-    flex-direction: column;
-  }
-  .navbar-links li{
-    text-align: center;
-  }
-  .navbar-links li a{
-    padding: .5rem 1rem;
-  }
-  .navbar-links.active{
-    display: flex;
-  }
-}
-#left{
-position:relative;
-float:left;
-}
-#left li a:hover{
-background-color: gray;
-color:black;
-}
-#right li a:hover{
-background-color: gray;
-color:black;
-}
-#right{
-position:relative;
-float:right;}
-
-        #register{
-            width: 350px;
-            margin-left: 600px;
-            
-        }
-        body{
-            background-image: url(Assets/Rose-flowers-books.jpg);
-           background-repeat: no-repeat;
-            background-size:cover;
-            color:white;
-        }
-		button,a{
-		font-size:larger;
-		}
-		.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-  
-}
-.right{
-    width: 300px;
-    height: 40px;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 10px 30px;
-    box-sizing: border-box;
-    cursor: pointer;
-    position:absolute;
-    background-color:white;
-    background-position: center;
-    background-size: cover;
-    color:black;
-    right:5px;
-    
-
-}
-li{
-    
-   
-    border-radius: 10px;
-    padding: 15px 25px;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: transform 0.5s;
+.header {
+	padding-top: 12px;
+	background: gray;
+	color: white;
+	padding-bottom: 12px;
 }
 
-li:hover{
-    transform: translateY(-20px);
-}
-.left{
-    width: 300px;
-    height: 40px;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 10px 30px;
-    box-sizing: border-box;
-    cursor: pointer;
-    position:absolute;
-    background-color:white;
-    background-position: center;
-    background-size: cover;
-    color:black;
-    left:5px;
-    
-
-}
-a{
-
-text-decoration:none;
-color:white;
+.header a h3:hover {
+	background-color: black;
+	height: 50px;
 }
 
-/* Add a color to the active/current link */
-.topnav a {
-  background-color: black;
-  color: white;
-  float: right;
-}   
+h3 {
+	text-transform: capitalize;
+}
+
+.side-navbar {
+	width: 180px;
+	height: 100%;
+	position: fixed;
+	margin-left: -300px;
+	background-color: #100901;
+	transition: 0.5s;
+}
+
+ul{
+padding: 30px;}
+
+.nav-link:active, .nav-link:focus, .nav-link:hover {
+	background-color: #ffffff26;
+}
+
+.my-container {
+	transition: 0.4s;
+}
+
+.active-nav {
+	margin-left: 0;
+}
+
+/* for main section */
+.active-cont {
+	margin-left: 180px;
+}
+
+.kiddo {
+	margin-left: -20px;
+}
+
+i {
+	color: gray;
+}
 </style>
-        
-    </head>
-    <body>
-    <%
+
+</head>
+<body>
+	<%
 	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
 		response.sendRedirect("index.jsp");
 	}
 	%>
-<nav class="navbar">
-        <div class='brand-title'>Library Management</div>
-        <a href='#' class='toggle-btn' id='toggle-btn'>
-          <span class='bar'></span>
-          <span class='bar'></span>
-          <span class='bar'></span>
-        </a>
-        <div class='navbar-links' id='navbar-links'>
-          <ul>
-            <li><a class="active"id='links' href="Logout.jsp">Logout</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="main-header">
-        <div class="container">
-          <h1 class="lead text-center">
-            Welcome to Library Management System!  <%=admin %>
-          </h1>
-        </div>
-      </div id="admin1">
-      <ul type="none">
-      <div id="left">
-            <li>
-              <a href="authorShowBook.jsp" class="left">Show Books</a>
-            </li><br><br>
-            <li>
-              <a href="addBook.jsp" class="left" style="background-color: black; color:white; margin-top:25px;">Add Books</a>
-            </li><br><br>
-            <li>
-              <a href="supplier.jsp" class="left" style="margin-top:50px;">Add Supplier Details</a>
-            </li><br><br>
-            <li>
-              <a href="FineHistory.jsp" class="left" style="background-color: black; color:white; margin-top:75px;">Add Fine Details</a>
-            </li><br><br>
-            <li>
-              <a href="UserInsert.jsp" class="left" style="margin-top:100px;">Add User</a>
-            </li><br><br>
-            </div>
-            <div id="right">
-            <li>
-              <a href="showFineHistory.jsp" class="right">View Fine History</a>
-            </li><br><br>
-            <li>
-              <a href="UserList.jsp" class="right" style="background-color: black; color:white; margin-top:25px;">View All Users</a>
-            </li><br><br>
-            <li>
-              <a href="AvailableBookList.jsp" class="right" style="margin-top:50px;">View Available Books</a>
-            </li><br><br>
-            <li>
-              <a href="UnavailableBookList.jsp" class="right" style="background-color: black; color:white; margin-top:75px;">View Unavailable Books</a>
-            </li><br><br>
-            </div>
-        </ul>
-        </nav>
-        </div>
-      </header>
-      
-      
-    </body>
+
+
+	<div class="header container-fluid">
+		<h3>
+			Welcome
+			<%=admin%></h3>
+		<a href="Logout.jsp"><h3
+				style="float: right; position: relative; bottom: 40px; color: white;">Logout</h3></a>
+	</div>
+
+	<div class="kiddo">
+		<div class="container-fluid">
+			<div class="row flex-nowrap" style="height: 559px;">
+				<div
+					class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light bg-gradient">
+					<div
+						class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+						<ul
+							class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+							id="menu" >
+							<li class="nav-item"><a href="home.jsp"
+								class="nav-link align-middle px-0 text-secondary"> <i
+									class="fs-4 bi-house\"></i> <span
+									class="ms-1 d-none d-sm-inline">Home</span>
+							</a></li>
+
+							<li><a href="authorShowBook.jsp"
+								class="nav-link px-0 align-middle text-secondary"> <i
+									class="fs-4 bi-table"></i> <span
+									class="ms-1 d-none d-sm-inline">Show Books</span></a></li>
+							<li><a href="addBook.jsp"
+								class="nav-link px-0 text-secondary"> <span
+									class="d-none d-sm-inline">Add Books</span></a></li>
+							<li><a href="supplier.jsp"
+								class="nav-link px-0 text-secondary"> <span
+									class="d-none d-sm-inline">Add Supplier Details</span></a></li>
+
+
+							<li><a href="FineHistory.jsp"
+								class="nav-link px-0 text-secondary"> <span
+									class="d-none d-sm-inline">Add Fine Details</span>
+							</a></li>
+							<li><a href="UserList.jsp"
+								class="nav-link px-0 text-secondary"> <span
+									class="d-none d-sm-inline">View All Users</span>
+							</a></li>
+							<li><a href="AvailableBookList.jsp"
+								class="nav-link px-0 text-secondary"> <span
+									class="d-none d-sm-inline">View Available Books</span></a></li>
+							<li><a href="UnavailableBookList.jsp"
+								class="nav-link px-0 text-secondary"> <span
+									class="d-none d-sm-inline">View Unavailable Books</span></a></li>
+
+
+							<li><a href="BookIssueList.jsp"
+								class="nav-link px-0 align-middle text-secondary"> <i
+									class="fs-4 bi-people"></i> <span
+									class="ms-1 d-none d-sm-inline">View Book Issue Details</span>
+							</a></li>
+						</ul>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--     <div class="sidenav">
+  <a href="authorShowBook.jsp">Show Books</a>
+  <a href="addBook.jsp">Add Books</a>
+  <a href="supplier.jsp">Add Supplier Details</a>
+  <a href="FineHistory.jsp">Add Fine Details</a>
+  <a href="UserInsert.jsp">Add User</a>
+  <a href="showFineHistory.jsp">View Fine History</a>
+  <a href="UserList.jsp">View All Users</a>
+  <a href="AvailableBookList.jsp">View Available Books</a>
+  <a href="UnavailableBookList.jsp">View Unavailable Books</a>
+  
+</div>   -->
+
+
+
+
+</body>
 </html>

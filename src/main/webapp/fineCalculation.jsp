@@ -21,6 +21,9 @@
             color:springgreen;
             font-size:larger;
         }
+        #para{
+        text-transform:capitalize;
+        }
 
     </style>
 </head>
@@ -38,7 +41,7 @@ String user_name=null;
 if (fineOf > 0) {
 	user_name=session.getAttribute("user").toString();
 %>
-	<%=user_name %><p>you have fine of rs</p><%=fineOf %>
+	<p id="para"><%=user_name %></p><p>you have fine of rs</p><%=fineOf %>
 	<p>	You have to pay now</p>
 	<button type="submit"><a href="returnSuccess.jsp">Pay now</a></button>
 	<%}else{

@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Add Supplier</title>
     <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -17,6 +19,7 @@ table, th, td {
         #register{
             width: 350px;
             margin-left: 600px;
+            margin-top:100px;
             
         }
         body{
@@ -35,6 +38,7 @@ table, th, td {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
 }
 .topnav a:hover {
   background-color: #ddd;
@@ -61,9 +65,10 @@ table, th, td {
   <a href="Logout.jsp">Logout</a>
   
 </div>
-    <div >
+    
         <fieldset id="register">
             <legend><h3>Supplier register</h3></legend>
+            <div class="container-mt-1" >
         <form action="adminjsp" method="post">
         <label for="user name">User name</label><br>
         <input type="text" id="text" name="text"  required pattern="[A-Za-z]{3,}" ><br><br>
@@ -72,11 +77,12 @@ table, th, td {
         <label for="mobileno">Mobile number</label><br>
         <input type="tel" id="text3" name="text3" required pattern="[6-9][0-9]{9}"><br><br>
         <button type="submit">Add Supplier</button>
+       </div>
     </form>
 </fieldset>
 
 
-    </div>
+   
 
 
 </body>

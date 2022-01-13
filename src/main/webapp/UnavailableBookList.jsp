@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List of Users</title>
+<title>List of Unavailable Books</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
@@ -41,7 +43,18 @@ table, th, td {
   background-color: #ddd;
   color: black;
 }
+.table tabl-hover{
+font-size:larger;
+}
+.table tr{
+color:white;
+}
 
+.table tr:hover{
+color:black;
+background-color:white; 
+
+}
 /* Add a color to the active/current link */
 .topnav a {
   background-color: black;
@@ -63,10 +76,12 @@ table, th, td {
   
 </div>
 <%!ResultSet rs; %>
-<h1>User List</h1>
-<table>
+<h1>Unavailable Book List</h1>
+<br><br>
+<div class="container-fluid">
+<table class="table table-hover" style="font-size:larger;">
 <th><b>Book Name</b></th>
-<th><b>Categort</b></th>
+<th><b>Category</b></th>
 <th><b>Author</b></th>
 <th><b>User Name</b></th>
 <th><b>Price</b></th>
@@ -90,6 +105,6 @@ BooksDaoImpl user = new BooksDaoImpl();
 			<%} %>
 			
 			</table>
-
+</div>
 </body>
 </html>

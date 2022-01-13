@@ -75,11 +75,11 @@ border:2px solidx;}
   <a href="Logout.jsp">Logout</a>
   
 </div>
-    <div class="container mt-1" >
+
         <fieldset id="register">
         
         <form action="addBook" method="post">
-        <div class="container mt-1">
+        <div class="container-mt-1" style="height: 100%;">
         <legend><h3>Book register</h3></legend>
         <label for="user name">Book Code</label><br>
         <input type="text" id="text" name="text" required pattern="[0-9]{3,}" class="form-control"><br>

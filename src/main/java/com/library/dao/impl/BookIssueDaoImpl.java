@@ -156,5 +156,28 @@ public ResultSet userHistory(BookIssue book) {
 	
 }
 
+public ResultSet bookIssueList() {
+	
+
+	String query="select * from book_issue_details";
+	try {
+	Connection con=ConnectionUtil.getDBConnect();
+	PreparedStatement pstmt = con.prepareStatement(query);
+	
+	
+     ResultSet rs = pstmt.executeQuery();
+     return rs;
+
+
+	}catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+	return null;
+	
+}
+
 
 }

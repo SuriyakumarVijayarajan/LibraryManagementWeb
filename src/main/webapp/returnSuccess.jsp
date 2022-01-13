@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Fine Payment</title>
 <style>
         #register{
         background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
@@ -30,6 +30,24 @@
   color: white;
   float: right;
 }   
+ #para{
+        text-transform:capitalize;
+        }
+        a{
+        text-decoration:none;
+        color:white;
+        }
+        a:hover{
+        color:gray;
+        background-color: black;
+        }
+        #log{
+        color:black;
+        font-size:larger;
+        }
+        #log:hover{
+        background-color:gray;
+        }
 </style>
 </head>
 <body>
@@ -49,7 +67,7 @@
 int fineOf=Integer.parseInt(session.getAttribute("fineamount").toString());
 String user_name=session.getAttribute("user").toString();
 Users u3=new Users(fineOf,user_name);
-%><%=user_name %><%
+%><h2 id="para"><%=user_name %></h2><%
 UsersDaoImpl user=new UsersDaoImpl();
 FineHistoryDaoImpl fineHistory=new FineHistoryDaoImpl();
 	try {
@@ -63,7 +81,7 @@ FineHistoryDaoImpl fineHistory=new FineHistoryDaoImpl();
 <h3>Your revised Wallet amount is <%=userWallet %></h3>				
 <h3>Book Return Success</h3><br><br>
 <h3><a href="user.jsp">Back to User Page</a></h3>&emsp;&emsp;
-<button><a href="Logout.jsp">logout</a></button>
+<button><a href="Logout.jsp" id="log">Log out</a></button>
 </fieldset>				
 </body>
 </html>
