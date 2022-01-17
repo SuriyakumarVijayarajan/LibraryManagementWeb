@@ -54,6 +54,8 @@ table, th, td {
 		response.sendRedirect("index.jsp");
 	}
 	%>
+	
+	
 <div class="topnav" >
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
@@ -70,6 +72,20 @@ table, th, td {
 <button type="submit">Search Book</button>
 </form>
 </fieldset>
+
+<%
+   if(session.getAttribute("authorNotFound") != null){%>
+	   <h1>Invalid Author</h1>
+	   
+   <%session.removeAttribute("authorNotFound"); }
+   %>
+	
+	<%
+   if(session.getAttribute("categoryNotFound") != null){%>
+	   <h1>Invalid Category</h1>
+	   
+   <%session.removeAttribute("categoryNotFound"); }
+   %>
 
 </body>
 </html>

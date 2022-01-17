@@ -9,13 +9,14 @@
         #register{
             width: 450px;
             margin-left: 550px;
+            margin-top:200px;
             
         }
         body{
-            background-image: url(Assets/Bgimage.jpeg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
             text-decoration:none;
             font-size:larger;
         }
@@ -29,15 +30,14 @@
 		response.sendRedirect("index.jsp");
 	}
 	%>
-<fieldset id="register">
-<form action="userlogout" method="post">
+
+<form action="userlogout" method="post" id="register">
 <h1> Thanks for visiting us </h1>
 <%
 request.getSession().invalidate(); %>
 
 
 </form>
-</fieldset>
 <h2 id="timehead" style="visibility:hidden;"></h2>
 </body>
 <script>

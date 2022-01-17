@@ -61,7 +61,8 @@ table, th, td {
 </div>
 
 
-<h2>The Author you entered is invalid</h2>
+<%session.setAttribute("authorNotFound", "author");
+response.sendRedirect("SearchBook.jsp"); %>
 
 </body>
 </html>

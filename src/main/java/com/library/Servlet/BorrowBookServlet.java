@@ -2,6 +2,8 @@ package com.library.Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 import javax.servlet.ServletException;
@@ -99,13 +101,25 @@ public class BorrowBookServlet extends HttpServlet {
 		BooksDaoImpl book=new BooksDaoImpl();
 		Books b1 = new Books(book_name, user_name);
 		String availability = book.bookBorrow(b1);
-		if (availability.equals("available")) {
-			System.out.println("available");
-			response.sendRedirect("bookAvailable.jsp");
-		}else {
-			System.out.println("Unavailable");
-			response.sendRedirect("bookUnavailable.jsp");
+		ResultSet rs=book.eligle(b1);
+		try {
+			while(rs.next()) {
+				if(rs.getInt(1)>=2) {
+					session.setAttribute("eligible", "hi");
+					response.sendRedirect("borrowBook.jsp");
+				}else if (availability.equals("available")) {
+					System.out.println("available");
+					response.sendRedirect("bookAvailable.jsp");
+				}else {
+					System.out.println("Unavailable");
+					response.sendRedirect("bookUnavailable.jsp");
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
 
 //			if (opinion.equals("yes")) {
 

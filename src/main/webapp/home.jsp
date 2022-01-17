@@ -95,6 +95,11 @@ width:1250px;
   background-color: black;
   overflow: hidden;
 }
+h4{
+font-size:larger;
+font-weight: bold;
+color:yellow;
+}
 
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -131,6 +136,9 @@ p,pre{
 fieldset{
   width: 200px;
 }
+
+#about{
+text-align: justify;}
 h1{
 color:yellow;
 text-shadow: 2px 2px #ff0000;
@@ -189,8 +197,8 @@ text-shadow: 2px 2px #ff0000;
   <h2 id="award" >About Us:</h2> 
   
   <p> &emsp;&emsp;The Anna Centenary Library (ACL), a state-of the-art library was inaugurated on September 15, 2010 on the occasion of the 102nd birth anniversary of the former Chief Minister of Tamil Nadu Dr. C N Annadurai popularly called ANNA. By reason of his great interest towards the books and library, this library is named as Anna Centenary Library. The foundation stone laid on August 16, 2008, completed in a short span and declared open to the public from 20th September 2010.
-
-    The built up area of this centralized air-conditioned library is 3.75 lakh sq. ft., encompasses ground and eight floors. At present, it hosts five lakhs books covering wide range of subjects to serve the information needs of the public, academic and corporate community. Our Library has a Braille Section, Own Books Reading Section, Children Section, Periodicals and Newspapers Section, Tamil books Section, English Books Section and Digital Library. </p><p>In addition, the library has a Conference Hall that can facilitate 150 members.  Our Library Auditorium is the most prestigious Auditorium of Chennai. This fully Air Conditioned Auditorium is an elegant structure with aesthetically designed Public Areas, Main Hall, Green Rooms, etc.
+</p>
+<p>    The built up area of this centralized air-conditioned library is 3.75 lakh sq. ft., encompasses ground and eight floors. At present, it hosts five lakhs books covering wide range of subjects to serve the information needs of the public, academic and corporate community. Our Library has a Braille Section, Own Books Reading Section, Children Section, Periodicals and Newspapers Section, Tamil books Section, English Books Section and Digital Library. </p><p>In addition, the library has a Conference Hall that can facilitate 150 members.  Our Library Auditorium is the most prestigious Auditorium of Chennai. This fully Air Conditioned Auditorium is an elegant structure with aesthetically designed Public Areas, Main Hall, Green Rooms, etc.
 
 </p><p>The Auditorium stage is ideal for demanding theatrical performances. To enable quick change of scenes and sets as well as elobarate lighting design.
 
@@ -202,23 +210,23 @@ text-shadow: 2px 2px #ff0000;
 
 
 
-Amphitheatre
+<h4>Amphitheatre</h4>
 
 
-The crescent shaped amphitheater with a seating capacity of more than 800 people available at our library. It is equipped with world-class acoustics and a state-of-the-art lighting system.
+<p>The crescent shaped amphitheater with a seating capacity of more than 800 people available at our library. It is equipped with world-class acoustics and a state-of-the-art lighting system.
+</p>
+<p>The stage is a versatile option for product launches, celebrity gatherings, corporate events, and entertainment spectacles. a rehearsal room and green rooms contain complete support facilities.
+</p>
 
-The stage is a versatile option for product launches, celebrity gatherings, corporate events, and entertainment spectacles. a rehearsal room and green rooms contain complete support facilities.
-
-
-Conference Hall:
-
-
-
-Simple elegance and modern design make the  Conference Hall a premier site of events that require a higher standard of refinement. Its spacious capacity accommodates up to 151 people for Conference and Seminar. Flexible equipment and furnishings can be customized to meet the needs of any event, whether it is a conference, seminar or any presentation, or business meeting. It has LCD projector and LCD Panel for presentation.
+<h4>Conference Hall:</h4>
 
 
 
-Mini Conference Halls:
+<p>Simple elegance and modern design make the  Conference Hall a premier site of events that require a higher standard of refinement. Its spacious capacity accommodates up to 151 people for Conference and Seminar. Flexible equipment and furnishings can be customized to meet the needs of any event, whether it is a conference, seminar or any presentation, or business meeting. It has LCD projector and LCD Panel for presentation.
+</p>
+
+
+<h4>Mini Conference Halls:</h4>
 
 Capacity minimum 30 people
 

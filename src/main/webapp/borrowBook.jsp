@@ -57,6 +57,12 @@ table, th, td {
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
+<%
+   if(session.getAttribute("eligible") != null){%>
+	   <h1>You are not eligible to borrow Book</h1>
+	   
+   <%session.removeAttribute("eligible"); }
+   %>
 <fieldset id="register">
 <form action="bookName" method="post">
 <label>Enter the Book Name</label>

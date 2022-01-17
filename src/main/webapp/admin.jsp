@@ -38,6 +38,7 @@ body {
 .header a h3:hover {
 	background-color: black;
 	height: 50px;
+	
 }
 
 h3 {
@@ -52,6 +53,7 @@ h3 {
 	background-color: #100901;
 	transition: 0.5s;
 }
+
 
 ul{
 padding: 30px;}
@@ -79,6 +81,7 @@ padding: 30px;}
 
 i {
 	color: gray;
+	
 }
 </style>
 
@@ -90,7 +93,6 @@ i {
 		response.sendRedirect("index.jsp");
 	}
 	%>
-
 
 	<div class="header container-fluid">
 		<h3>
@@ -111,41 +113,42 @@ i {
 							class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
 							id="menu" >
 							<li class="nav-item"><a href="home.jsp"
-								class="nav-link align-middle px-0 text-secondary"> <i
+								class="nav-link align-middle px-0 text-dark"> <i
 									class="fs-4 bi-house\"></i> <span
 									class="ms-1 d-none d-sm-inline">Home</span>
 							</a></li>
 
 							<li><a href="authorShowBook.jsp"
-								class="nav-link px-0 align-middle text-secondary"> <i
+								class="nav-link px-0 align-middle text-dark"> <i
 									class="fs-4 bi-table"></i> <span
+									
 									class="ms-1 d-none d-sm-inline">Show Books</span></a></li>
 							<li><a href="addBook.jsp"
-								class="nav-link px-0 text-secondary"> <span
+								class="nav-link px-0 text-dark" class="text-md-start"> <span
 									class="d-none d-sm-inline">Add Books</span></a></li>
 							<li><a href="supplier.jsp"
-								class="nav-link px-0 text-secondary"> <span
+								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">Add Supplier Details</span></a></li>
 
 
 							<li><a href="FineHistory.jsp"
-								class="nav-link px-0 text-secondary"> <span
+								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">Add Fine Details</span>
 							</a></li>
 							<li><a href="UserList.jsp"
-								class="nav-link px-0 text-secondary"> <span
+								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">View All Users</span>
 							</a></li>
 							<li><a href="AvailableBookList.jsp"
-								class="nav-link px-0 text-secondary"> <span
+								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">View Available Books</span></a></li>
 							<li><a href="UnavailableBookList.jsp"
-								class="nav-link px-0 text-secondary"> <span
+								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">View Unavailable Books</span></a></li>
 
 
 							<li><a href="BookIssueList.jsp"
-								class="nav-link px-0 align-middle text-secondary"> <i
+								class="nav-link px-0 align-middle text-dark"> <i
 									class="fs-4 bi-people"></i> <span
 									class="ms-1 d-none d-sm-inline">View Book Issue Details</span>
 							</a></li>

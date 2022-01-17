@@ -10,11 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Add Supplier</title>
     <style type="text/css">
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 20px;
-}
+
 
         #register{
             width: 350px;
@@ -31,26 +27,35 @@ table, th, td {
 		button{
 		font-size:larger;
 		}
-		.topnav a {
+		
+		.mynav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  margin-top:-50px;
 
 }
-.topnav a:hover {
+.mynav a:hover {
   background-color: #ddd;
   color: black;
 }
 
 /* Add a color to the active/current link */
-.topnav a {
+.mynav a {
   background-color: black;
   color: white;
   float: right;
-}   
+}
+
+form{
+border:2px solid white;
+border-radius: 10px;
+width:300px;
+background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+}    
 </style>
 </head>
 <body>
@@ -60,16 +65,18 @@ table, th, td {
 		response.sendRedirect("index.jsp");
 	}
 	%>
-<div class="topnav" >
+<div class="mynav" >
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
   
 </div>
     
         <fieldset id="register">
-            <legend><h3>Supplier register</h3></legend>
-            <div class="container-mt-1" >
+            
+            
         <form action="adminjsp" method="post">
+        <div class="container-mt-1" >
+        <legend><h3>Supplier register</h3></legend>
         <label for="user name">User name</label><br>
         <input type="text" id="text" name="text"  required pattern="[A-Za-z]{3,}" ><br><br>
         <label for="city">City</label><br>

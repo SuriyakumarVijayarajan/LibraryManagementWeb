@@ -434,6 +434,24 @@ public void delete(Books book) {
 		return rs;
 	}
 
+	public ResultSet eligle(Books book) {
+		String query="select count(user_name) from book_details where user_name in ?";
+		Connection con = null;
+		PreparedStatement pstmt=null;
+		try {
+			con=ConnectionUtil.getDBConnect();
+		    pstmt=con.prepareStatement(query);
+		    pstmt.setString(1, book.getUser_name());
+		    ResultSet rs=null;
+			rs=pstmt.executeQuery();
+			return rs;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 	
 	

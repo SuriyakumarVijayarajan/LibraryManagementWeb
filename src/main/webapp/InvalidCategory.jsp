@@ -61,7 +61,8 @@ table, th, td {
 </div>
 
 
-<h2>The Category you entered is invalid</h2>
+<%session.setAttribute("categoryNotFound", "category");
+response.sendRedirect("SearchBook.jsp"); %>
 
 </body>
 </html>

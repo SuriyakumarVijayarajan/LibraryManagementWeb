@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Recharge Wallet</title>
 <style>
         #register{
         background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
@@ -29,6 +29,9 @@
         color:black;
         }
 
+h3 {
+	text-transform: capitalize;
+}
     </style>
 </head>
 <body>
@@ -44,7 +47,7 @@
 String name=session.getAttribute("user").toString();
 int newWallet=walletold+500;
 session.setAttribute("userWalletLogin", newWallet); %>
-	<p><%=name %> your walletamount is <%=walletold%> .It is very low</p>
+	<p><h3><%=name %></h3> your walletamount is <%=walletold%> .It is very low</p>
 	<p>You have to recharge your wallet with rs.500 to enter in to library</p>
 	<p>Are you ready to pay </p>
 	<button type="submit"><a href="loginwallet.jsp">Pay now</a></button>&emsp;
