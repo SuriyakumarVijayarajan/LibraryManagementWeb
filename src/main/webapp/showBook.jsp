@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Show Book</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <style type="text/css">
@@ -55,7 +55,7 @@ background-color:white;
 }
 
 /* Add a color to the active/current link */
-.topnav a {
+.topnav a,h1 {
   background-color: black;
   color: white;
   float: right;
@@ -76,6 +76,7 @@ color:white;
 <%BooksDaoImpl book = new BooksDaoImpl();
 ResultSet rs = book.showBooks();%>
 <div class="topnav" >
+<h1 style="float:left;"> Library Management</h1>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>

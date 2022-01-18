@@ -90,7 +90,7 @@
     <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
     
     <label class="form-check-label" for="myCheck">I agree on the terms and conditions.</label>
-    <div class="valid-feedback">Valid.</div>
+    
         </div>
         
         <div class="mb-3 mt-3">
