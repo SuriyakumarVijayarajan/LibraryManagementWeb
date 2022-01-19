@@ -21,6 +21,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
+	overflow:hidden;
 }
 
 .main {
@@ -78,6 +79,9 @@ padding: 25px;}
 .kiddo {
 	margin-left: -20px;
 }
+.row flex-nowrap{
+margin-rop:-20px;}
+
 
 i {
 	color: gray;
@@ -104,7 +108,7 @@ i {
 
 	<div class="kiddo">
 		<div class="container-fluid">
-			<div class="row flex-nowrap" style="height: 559px;">
+			<div class="row flex-nowrap" style="height: 550px;">
 				<div
 					class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light bg-gradient">
 					<div
@@ -128,7 +132,7 @@ i {
 									class="d-none d-sm-inline">Add Books</span></a></li>
 							<li><a href="supplier.jsp"
 								class="nav-link px-0 text-dark"> <span
-									class="d-none d-sm-inline">Add Supplier Details</span></a></li>
+									class="d-none d-sm-inline">Add Supplier</span></a></li>
 
 
 							<li><a href="FineHistory.jsp"

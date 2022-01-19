@@ -142,4 +142,28 @@ public ResultSet adminView()  {
 	
 }
 
+
+public ResultSet userView(OrderBook order )  {
+	// TODO Auto-generated method stub
+	String query="select * from order_book where user_name in ?";
+//	String query1="update order_book set status='sent' where supplier_name in ?";
+	ResultSet rs=null;
+	try {
+	Connection con=ConnectionUtil.getDBConnect();
+	PreparedStatement pstmt=con.prepareStatement(query);
+	pstmt.setString(1, order.getUser_name());
+	rs=pstmt.executeQuery();
+//	PreparedStatement pstmt1=con.prepareStatement(query1);
+//	pstmt1.setString(1, order.getUser_name());
+//	pstmt1.executeUpdate();
+	return rs;
+	}catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+   return null;
+	
+	
+}
+
 }

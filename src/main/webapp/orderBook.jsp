@@ -26,7 +26,7 @@ table, th, td {
             background-size:cover;
             color:springgreen;
         }
-             .topnav a {
+        .topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -47,7 +47,7 @@ color:black;
   background-color: black;
   color: white;
   float: right;
-}
+} 
 
 </style>
 </head>
@@ -58,8 +58,9 @@ color:black;
 		response.sendRedirect("index.jsp");
 	}
 	%>
+	
 	<div class="topnav" >
-  <a class="active" href="admin.jsp">Home</a>
+  <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
 
@@ -69,11 +70,14 @@ color:black;
 		OrderBookDaoImpl obDao = new OrderBookDaoImpl();
 		String book_name=null;
 		String author=null;
+		String userName=session.getAttribute("user").toString();
+		OrderBook order=new OrderBook(userName,author,book_name);
+		
 //		String user_name=session.getAttribute("supplier").toString();
 		
 		
 		try {
-			rs = obDao.adminView();
+			rs = obDao.userView(order);
 		}  catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,16 +88,15 @@ color:black;
 		<th><b>BookName</b></th>
 		<th><b>Author</b></th>
 		<th><b>Status</b></th>
-		<th><b>Add Book</b></th>
 		</tr>
 	<%do{ %>
 			<tr>
 			<td><%=rs.getString(2)%></td>
 			<td><%=rs.getString(3)%></td>
-			<td><%=rs.getString(5) %></td>
-			<%if(rs.getString(5).equals("sent")){%>
-			<td><button style="font-size:large;width:100px;"><a href="addOrderBook.jsp?orderBookName=<%=rs.getString(2)%>&orderAuthorName=<%=rs.getString(3)%>" style="text-decoration:none;">Add Book</a></button></td>
-			<%} %>
+			<%if(rs.getString(5).equals("arrived")){%>
+			<td><button style="font-size:large;width:100px;"><a href="bookName?bookname=<%=rs.getString(2)%>&orderAuthorName=<%=rs.getString(3)%>" style="text-decoration:none;">Borrow Book</a></button></td>
+			<%}else %>
+			
 			</tr>
 	<%	}while (rs.next());%>
 	</table>

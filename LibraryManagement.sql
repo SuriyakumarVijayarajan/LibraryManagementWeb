@@ -191,12 +191,12 @@ alter table book_issue_details modify date_returned default add_months(sysdate,3
 insert into book_issue_details (user_name,book_title) values ('kamal','King Lear');
 update user_details set fine_amount=15 where user_name in 'harish';
 select count(user_name) from book_details where user_name in 'hari';
-update order_book set status='arrived' where book_name in 'Shakespeare';
+update order_book set status='sent' where book_name in 'Bel Canto';
 commit;
 
 
 commit;
-update order_book set status='arrived' where book_name in 'Shakespeare';
+update order_book set status='sent' where author in 'Shakespeare';
 desc user_details;
 delete from book_details where book_code in '5017';
 rollback;
@@ -208,3 +208,5 @@ select * from supplier_details;
 select * from order_book;
 select * from fine_history;
 commit;         
+
+update order_book set status='arrived' where book_name='Julius Caesar';

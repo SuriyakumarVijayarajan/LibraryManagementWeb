@@ -155,7 +155,7 @@ button {
 					<nav class="navitem">
 						<div class='navbar-links' id='navbar-links'>
 							<a href="SearchBook.jsp">Search Books</a> <a href="showBook.jsp">View
-								Books</a> <a href="borrowBook.jsp">Borrow Book</a> <a
+								Books</a> <a href="orderBook.jsp">Ordered Book List</a> <a
 								href="returnBook.jsp">Return Book</a> <a href="requestBook.jsp">Request
 								New Book</a> <a href="userHistory.jsp">View Book Borrow History</a>
 							<a href="Logout.jsp" style="float: right;">Logout</a>
