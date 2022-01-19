@@ -36,8 +36,15 @@
     <label for= "password">Password</label>
     <input type="password" id="password" name="password1" required pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$" oninvalid="setCustomValidity('Password must contains a alphabet, a number and a special character')" onchange="try{setCustomValidity('')}catch(e){}" ><br><br>
     <label>Supplier Name</label>
-    <input type="text" name="supplier">
+    <input type="text" name="supplier" required pattern="[A-Za-z]{2,}" oninvalid="setCustomValidity('Supplier Name must contains only alphabets')" onchange="try{setCustomValidity('')}catch(e){}"  >
     <button type="submit">Log in</button>
+    
+     <%
+   if(session.getAttribute("AdminError") != null){%>
+	   <h1 style="color:red;background-color:white;font-size:25px;float:right;">Invalid Credentials</h1>
+	   
+   <%session.removeAttribute("AdminError"); }
+   %>
     
     </form>
   </fieldset>  

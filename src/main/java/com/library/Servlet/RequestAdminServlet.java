@@ -53,10 +53,14 @@ public class RequestAdminServlet extends HttpServlet {
 			OrderBook order=new OrderBook(supplier_name, book_name);
 			OrderBookDaoImpl obDao=new OrderBookDaoImpl();
 			obDao.update(order);
+			response.sendRedirect("user.jsp");
 
+		}else {
+			session.setAttribute("AdminError", "adminWrong");
+			response.sendRedirect("requestAdmin.jsp");
 		}
 		
-		response.sendRedirect("user.jsp");
+		
 
 	}
 

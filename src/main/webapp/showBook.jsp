@@ -72,6 +72,12 @@ color:white;
 		response.sendRedirect("index.jsp");
 	}
 	%>
+	<%
+   if(session.getAttribute("eligible") != null){%>
+	   <h1>You are not eligible to borrow Book</h1>
+	   
+   <%session.removeAttribute("eligible"); }
+   %>
 
 <%BooksDaoImpl book = new BooksDaoImpl();
 ResultSet rs = book.showBooks();%>

@@ -110,6 +110,9 @@ public class BookReturnAdmin extends HttpServlet {
 		
 	
 
+}else {
+	session.setAttribute("AdminError", "adminWrong");
+	response.sendRedirect("bookReturnAdmin.jsp");
 }
 }
 	

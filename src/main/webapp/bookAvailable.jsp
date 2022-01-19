@@ -37,6 +37,13 @@
     <label for= "password"><h3>Password</h3></label>
     <input type="password" id="password" name="password" required pattern="^(?=.*[0-9])(?=.*[@#$%*!^()_+])(?=.*[a-z])(?=.*[A-Z]).{8,16}$" oninvalid="setCustomValidity('Password must contains a alphabet, a number and a special character')" onchange="try{setCustomValidity('')}catch(e){}" ><br><br>
     <button type="submit">Log In</button>
+    
+    <%
+   if(session.getAttribute("AdminError") != null){%>
+	   <h1 style="color:red;background-color:white;font-size:25px;float:right;">Invalid Credentials</h1>
+	   
+   <%session.removeAttribute("AdminError"); }
+   %>
     </form>
     </fieldset>
 </body>

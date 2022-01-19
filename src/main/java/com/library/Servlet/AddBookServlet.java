@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.library.dao.impl.BooksDaoImpl;
+import com.library.dao.impl.OrderBookDaoImpl;
 import com.library.model.Books;
+import com.library.model.OrderBook;
 
 /**
  * Servlet implementation class addBook
@@ -33,7 +35,9 @@ public class AddBookServlet extends HttpServlet {
 		int price=Integer.parseInt(request.getParameter("text4"));
 		String rack_number=request.getParameter("text5");
 		
-		
+		 OrderBookDaoImpl obDao=new OrderBookDaoImpl();
+	       OrderBook order=new OrderBook("null",book_name,author);
+	       obDao.updateStatus(order);
 		System.out.println(book_code+book_name+category+author+price+rack_number);
 		BooksDaoImpl book=new BooksDaoImpl();
 		Books p1 = new Books(book_code, book_name, category, author, price, rack_number);

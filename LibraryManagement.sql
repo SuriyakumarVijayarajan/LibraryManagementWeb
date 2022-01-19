@@ -132,7 +132,7 @@ create sequence seq start with 1010 increment by 1 minvalue 1001 maxvalue 1200;
 alter table supplier_details drop column supplier_id;
 create sequence seq1 start with 101 increment by 1 minvalue 100 maxvalue 999;
 alter table supplier_details add supplier_id int default seq1.nextval;
-delete from user_details where user_id in 1022;
+delete from book_details where book_code in 5017;
 commit;
 commit;
 
@@ -166,13 +166,14 @@ alter table book_issue_details drop column book_issue_no;
 delete from book_issue_details where fine_range_in_month in 12;
 alter table book_issue_details add book_issue_no int generated always as identity(start with 1 increment by 1);
 update book_details set prerequest='none' where prerequest='mani';
+alter table order_book add  status varchar2(20) default 'pending';
 
 
 update user_details
-set userwallet = (userwallet - 500)
+set userwallet = (userwallet - 1000)
 where user_name in 'maari';
-delete from order_book where supplier_name in '103';
-
+delete from order_book where author = 'APJAbdulKalam';
+select * from order_book;
 create table fine_history(
 user_name varchar2(20),
 fine_amount int,
@@ -181,7 +182,7 @@ commit;
 select * from fine_history;
 select * from user_details;
 select * from book_details;
-delete from supplier_details where supplier_name in 'ajithkumar';
+delete from user_details where user_name in 'hai';
 select book_title from book_details where availability in 'available' and prerequest is  null or prerequest in 'hari';
 alter table user_details add userWallet int default 1000;
 alter table user_details drop column userWallet;
@@ -190,12 +191,15 @@ alter table book_issue_details modify date_returned default add_months(sysdate,3
 insert into book_issue_details (user_name,book_title) values ('kamal','King Lear');
 update user_details set fine_amount=15 where user_name in 'harish';
 select count(user_name) from book_details where user_name in 'hari';
+update order_book set status='arrived' where book_name in 'Shakespeare';
 commit;
 
 
 commit;
+update order_book set status='arrived' where book_name in 'Shakespeare';
 desc user_details;
-
+delete from book_details where book_code in '5017';
+rollback;
 select * from user_details;
 select * from book_details;
 select * from book_issue_details;

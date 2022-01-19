@@ -84,6 +84,9 @@ public class BookAvailableServlet extends HttpServlet {
 			Books b2 = new Books(book_title, book_issue_no);
 			book.updateBookIssue(b2);
 			response.sendRedirect("bookBorrowSuccess.jsp");
+		}else {
+			session.setAttribute("AdminError", "adminWrong");
+			response.sendRedirect("bookAvailable.jsp");
 		}
 	}
 

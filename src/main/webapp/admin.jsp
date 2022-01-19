@@ -56,7 +56,7 @@ h3 {
 
 
 ul{
-padding: 30px;}
+padding: 25px;}
 
 .nav-link:active, .nav-link:focus, .nav-link:hover {
 	background-color: #ffffff26;
@@ -151,6 +151,12 @@ i {
 								class="nav-link px-0 align-middle text-dark"> <i
 									class="fs-4 bi-people"></i> <span
 									class="ms-1 d-none d-sm-inline">View Book Issue Details</span>
+							</a></li>
+							
+							<li><a href="viewOrderBook.jsp"
+								class="nav-link px-0 align-middle text-dark"> <i
+									class="fs-4 bi-people"></i> <span
+									class="ms-1 d-none d-sm-inline">View Ordered Book list</span>
 							</a></li>
 						</ul>
 						<hr>

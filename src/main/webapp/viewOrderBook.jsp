@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Supplier Page</title>
+<title>Ordered Books</title>
 <style>
 table, th, td {
   border: 1px solid black;
@@ -43,31 +43,36 @@ table, th, td {
 		OrderBookDaoImpl obDao = new OrderBookDaoImpl();
 		String book_name=null;
 		String author=null;
-		String user_name=session.getAttribute("supplier").toString();
-		OrderBook order=new OrderBook(user_name,author,book_name);
+//		String user_name=session.getAttribute("supplier").toString();
+		
 		
 		try {
-			rs = obDao.view(order);
+			rs = obDao.adminView();
 		}  catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}if (rs.next()) {
-	do{%>
+	%>
 		<table>
 		<tr>
 		<th><b>BookName</b></th>
 		<th><b>Author</b></th>
+		<th><b>Status</b></th>
+		<th><b>Order Book</b></th>
 		</tr>
-	
+	<%do{ %>
 			<tr>
 			<td><%=rs.getString(2)%></td>
 			<td><%=rs.getString(3)%></td>
+			<td><%=rs.getString(5) %></td>
+			<%if(rs.getString(5).equals("sent")){%>
+			<td><button style="font-size:large;width:100px;"><a href="addOrderBook.jsp?orderBookName=<%=rs.getString(2)%>&orderAuthorName=<%=rs.getString(3)%>" style="text-decoration:none;">Add Book</a></button></td>
+			<%} %>
 			</tr>
 	<%	}while (rs.next());%>
 	</table>
 	<br>
-		<button style="margin-left:650px;font-size:large;"><a href="index.jsp">Send Books</a></button>
-		
+
 		<%}
 	else{%>
 	

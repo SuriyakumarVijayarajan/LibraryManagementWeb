@@ -75,6 +75,7 @@
 	   
    <%session.removeAttribute("invalidUser"); }
    %>
+   
     <input type="checkbox" onclick="myFunction()" style="color:red;">Show Password<br><br>
      
     <button type="submit">Log In</button>

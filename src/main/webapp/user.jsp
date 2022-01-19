@@ -137,6 +137,7 @@ button {
 		response.sendRedirect("index.jsp");
 	}
 	%>
+	
 	<center>
 		<h1 id="capital">
 			Welcome to Library Management System!
@@ -172,6 +173,7 @@ button {
 		<%
 		String userWallet = session.getAttribute("userWalletLogin").toString();
 		%>
+		
 	</div>
 	<br>
 	<br>
@@ -180,7 +182,13 @@ button {
 	<h1>
 		Your User Wallet Amount is
 		<%=userWallet%></h1>
-
+		<br><br>
+<%
+   if(session.getAttribute("eligible") != null){%>
+	   <h1>You are not eligible to borrow Book</h1>
+	   
+   <%session.removeAttribute("eligible"); }
+   %>
 
 </body>
 </html>

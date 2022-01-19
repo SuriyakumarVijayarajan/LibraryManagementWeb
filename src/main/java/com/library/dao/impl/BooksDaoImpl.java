@@ -439,6 +439,7 @@ public void delete(Books book) {
 		Connection con = null;
 		PreparedStatement pstmt=null;
 		try {
+			System.out.println("hisui");
 			con=ConnectionUtil.getDBConnect();
 		    pstmt=con.prepareStatement(query);
 		    pstmt.setString(1, book.getUser_name());

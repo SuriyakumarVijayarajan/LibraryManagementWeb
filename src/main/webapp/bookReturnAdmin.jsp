@@ -39,6 +39,12 @@
     <label for"returndate"name="returndate">Date Returned</label>
     <input type="date" id="datefield" name="returndate" required><br><br>
     <button type="submit">Log In</button>
+    <%
+   if(session.getAttribute("AdminError") != null){%>
+	   <h1 style="color:red;background-color:white;font-size:25px;float:right;">Invalid Credentials</h1>
+	   
+   <%session.removeAttribute("AdminError"); }
+   %>
     </form>
     </fieldset>
 </body>

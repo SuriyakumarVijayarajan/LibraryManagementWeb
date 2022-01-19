@@ -57,6 +57,25 @@
   <a href="Logout.jsp">Logout</a>
   
 </div>
+<br><Br>
+<%
+   if(session.getAttribute("unameExists") != null){%>
+	   <h1 style="color:red;background-color:white;font-size:25px;float:left;">UserName Already Exists</h1>
+	   
+   <%session.removeAttribute("unameExists"); }
+   %>
+   <%
+   if(session.getAttribute("emailExists") != null){%>
+	   <h1 style="color:red;background-color:white;font-size:25px;float:left;">Email Id Already Exists</h1>
+	   
+   <%session.removeAttribute("emailExists"); }
+   %>
+   <%
+   if(session.getAttribute("mobileExists") != null){%>
+	   <h1 style="color:red;background-color:white;font-size:25px;float:left;">Mobile Number Already Exists</h1>
+	   
+   <%session.removeAttribute("mobileExists"); }
+   %>
 
     <div >
         <fieldset id="register">

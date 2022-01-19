@@ -74,7 +74,8 @@ public void delete(OrderBook orderBook)  {
 
 public ResultSet view(OrderBook order)  {
 	// TODO Auto-generated method stub
-	String query="select * from order_book where supplier_name in ?";
+	String query="select * from order_book where supplier_name in ? and status in 'pending'";
+	String query1="update order_book set status='sent' where supplier_name in ?";
 	ResultSet rs=null;
 	try {
 	Connection con=ConnectionUtil.getDBConnect();
@@ -82,6 +83,9 @@ public ResultSet view(OrderBook order)  {
 	pstmt.setString(1, order.getUser_name());
 	System.out.println(order.getUser_name());
 	rs=pstmt.executeQuery();
+	PreparedStatement pstmt1=con.prepareStatement(query1);
+	pstmt1.setString(1, order.getUser_name());
+	pstmt1.executeUpdate();
 	return rs;
 	}catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -90,6 +94,52 @@ public ResultSet view(OrderBook order)  {
    return null;
 	
 	
-}	
+}
+
+public int updateStatus(OrderBook order)  {
+	// TODO Auto-generated method stub
+	String query="update order_book set status='arrived' where book_name=?";
+	ResultSet rs=null;
+	try {
+	Connection con=ConnectionUtil.getDBConnect();
+	PreparedStatement pstmt=con.prepareStatement(query);
+	System.out.println(order.getBook_name());
+	pstmt.setString(1, order.getAuthor());
+	//pstmt.setString(2,order.getAuthor());
+	System.out.println(order.getAuthor());
+	pstmt.executeUpdate();
+
+	return 1;
+	}catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+   return 1;
+	
+	
+}
+
+public ResultSet adminView()  {
+	// TODO Auto-generated method stub
+	String query="select * from order_book";
+//	String query1="update order_book set status='sent' where supplier_name in ?";
+	ResultSet rs=null;
+	try {
+	Connection con=ConnectionUtil.getDBConnect();
+	PreparedStatement pstmt=con.prepareStatement(query);
+	
+	rs=pstmt.executeQuery();
+//	PreparedStatement pstmt1=con.prepareStatement(query1);
+//	pstmt1.setString(1, order.getUser_name());
+//	pstmt1.executeUpdate();
+	return rs;
+	}catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+   return null;
+	
+	
+}
 
 }

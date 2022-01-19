@@ -256,6 +256,58 @@ public ResultSet userList() {
 		return null;
 	
 }
+public ResultSet unameCheck(Users user) {
+	// TODO Auto-generated method stub
+	String query="select * from user_details where user_name in ?";
+	try {
+			
+			Connection con=ConnectionUtil.getDBConnect();
+			
+			PreparedStatement pstmt=con.prepareStatement(query);
+			pstmt.setString(1, user.getUser_name());
+			ResultSet rs=pstmt.executeQuery();
+			return rs;
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	return null;
+}
+public ResultSet emailCheck(Users user) {
+	// TODO Auto-generated method stub
+	String query="select * from user_details where email_id in ?";
+	try {
+			
+			Connection con=ConnectionUtil.getDBConnect();
+			
+			PreparedStatement pstmt=con.prepareStatement(query);
+			pstmt.setString(1, user.getEmail_id());
+			ResultSet rs=pstmt.executeQuery();
+			return rs;
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	return null;
+}
+public ResultSet mobileCheck(Users user) {
+	// TODO Auto-generated method stub
+	String query="select * from user_details where mobile_no in ?";
+	try {
+			
+			Connection con=ConnectionUtil.getDBConnect();
+			
+			PreparedStatement pstmt=con.prepareStatement(query);
+			pstmt.setLong(1, user.getMobile_no());
+			ResultSet rs=pstmt.executeQuery();
+			return rs;
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	return null;
+}
 
 
 }
