@@ -92,11 +92,11 @@ border:2px solidx;}
        String orderUserName=null;
       %>
        <label for="city">Book Name</label><br>
-        <input type="text" id="text1" name="text1" value="<%=bookName %>" required pattern="[A-Za-z\s]{3,}" class="form-control"><br>
+        <input type="text" id="text1" name="text1" value="<%=bookName %>" readonly required pattern="[A-Za-z\s]{3,}" class="form-control"><br>
         <label for="password">Category</label><br>
         <input type="text" id="text2" name="text2" required pattern="[A-Za-z]{3,}" class="form-control"><br>
         <label for="mobileno">Author</label><br>
-        <input type="tel" id="text3" name="text3" value="<%=author %>" required pattern="[A-Za-z\s]{3,}" class="form-control"><br>
+        <input type="tel" id="text3" name="text3" value="<%=author %>" readonly required pattern="[A-Za-z\s]{3,}" class="form-control"><br>
         
         <label for="email">Price</label><br>
         <input type="number" id="text4" name="text4" required min="1" max="10000" class="form-control" onkeyup="if(parseInt(this.value)>10000){ this.value =10000; return false; }"><br>

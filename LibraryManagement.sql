@@ -192,6 +192,9 @@ insert into book_issue_details (user_name,book_title) values ('kamal','King Lear
 update user_details set fine_amount=15 where user_name in 'harish';
 select count(user_name) from book_details where user_name in 'hari';
 update order_book set status='sent' where book_name in 'Bel Canto';
+alter table book_details modify column book_code generated always as identity(start with 5020 increment by 1);
+
+update order_book set status='arrived' where book_name='Julius Caesar';
 commit;
 
 
@@ -208,5 +211,3 @@ select * from supplier_details;
 select * from order_book;
 select * from fine_history;
 commit;         
-
-update order_book set status='arrived' where book_name='Julius Caesar';

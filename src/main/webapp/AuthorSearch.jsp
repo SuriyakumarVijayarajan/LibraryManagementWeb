@@ -30,6 +30,7 @@ table, th, td {
 		}
 		a{
 		color:blue;
+		text-decotation:none;
 		}
 		.topnav a {
   float: left;
@@ -84,7 +85,7 @@ rs = book.authorFetch(books);
 
 <br>
 <%if(rs.next()){do{ %>
-<%= rs.getString(1)%><br>
+<a href="bookName?bookname=<%=rs.getString(1) %>" style="text-decoration: none;color:white;"><%= rs.getString(1)%></a><br>
 
 
 <%}while(rs.next());
@@ -96,9 +97,10 @@ rs = book.authorFetch(books);
 	}catch(InvalidAuthorException e){
 		String validate=e.getMessage();
 		response.sendRedirect(validate);
+	
 	}}%>
 <br><br>
-<button><a href="borrowBook.jsp">BorrowBook</a></button>
+
 </fieldset>
 </body>
 </html>

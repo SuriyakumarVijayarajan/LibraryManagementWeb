@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <title>Ordered Books</title>
 <style>
 table, th, td {
@@ -41,6 +44,19 @@ table, th, td {
 a{
 color:black;
 }
+table tabl-hover{
+font-size:larger;
+}
+table tr{
+color:white;
+}
+
+table tr:hover{
+color:black;
+background-color:white; 
+
+}
+
 
 /* Add a color to the active/current link */
 .topnav a {
@@ -83,7 +99,7 @@ color:black;
 			e.printStackTrace();
 		}if (rs.next()) {
 	%>
-		<table>
+		<table class = "container-fluid">
 		<tr>
 		<th><b>BookName</b></th>
 		<th><b>Author</b></th>

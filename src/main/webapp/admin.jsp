@@ -108,7 +108,7 @@ i {
 
 	<div class="kiddo">
 		<div class="container-fluid">
-			<div class="row flex-nowrap" style="height: 550px;">
+			<div class="row flex-nowrap" style="height: 559px;">
 				<div
 					class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light bg-gradient">
 					<div

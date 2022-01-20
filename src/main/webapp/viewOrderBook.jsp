@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <title>Ordered Books</title>
 <style>
 table, th, td {
@@ -48,7 +51,18 @@ color:black;
   color: white;
   float: right;
 }
+table tabl-hover{
+font-size:larger;
+}
+table tr{
+color:white;
+}
 
+table tr:hover{
+color:black;
+background-color:white; 
+
+}
 </style>
 </head>
 <body>

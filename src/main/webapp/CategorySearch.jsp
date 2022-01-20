@@ -78,7 +78,7 @@ rs = book.categoryFetch(b1); %>
 
 <% if(rs.next()){do{ %>
 
-<%= rs.getString(1)%><br>
+<a href="bookName?bookname=<%=rs.getString(1) %>" style="text-decoration: none;color:white;"><%= rs.getString(1)%></a><br><br>
 
 <%}while(rs.next());
 }else{
@@ -91,7 +91,6 @@ rs = book.categoryFetch(b1); %>
 
 
 <br><br>
-<button><a href="borrowBook.jsp">BorrowBook</a></button>
 </fieldset>
 </body>
 
