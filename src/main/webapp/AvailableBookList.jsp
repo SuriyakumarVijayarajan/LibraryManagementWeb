@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.library.connection.*" import="com.library.dao.impl.*" import="com.library.model.*"%>
@@ -5,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List of Users</title>
+<title>List of Available Books</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -59,10 +60,14 @@ background-color:white;
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
-}   
+} 
+.topnav{
+background-color: gray;
+overflow:hidden;
+}  
 </style>
 </head>
 <body>
@@ -73,38 +78,37 @@ background-color:white;
 	}
 	%>
 <div class="topnav" >
+
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
+  <h1 style="float:left;">Library Management</h1>
+  
   
 </div>
-<%!ResultSet rs; %>
-<h1>Available Book List</h1>
+<h2>Available Book List</h2>
 <div class="container-fluid">
 <table class="table table-hover" style="font-size:larger;">
 <th><b>Book Name</b></th>
-<th><b>Categort</b></th>
+<th><b>Category</b></th>
 <th><b>Author</b></th>
 <th><b>Rack Number</b></th>
 <th><b>Price</b></th>
 <th><b>Pre Request</b></th>
-<%
 
-BooksDaoImpl user = new BooksDaoImpl();
-
-				rs = user.availableBookList();
-				while(rs.next()){%>
-					
+<%List<Books> book=(List<Books>) session.getAttribute("availableBookList");for(Books books:book){
+	
+%>					
 			<tr>
-<td><%=rs.getString(2)%></td>
-<td>  <%=rs.getString(3) %></td>
-<td>  <%=rs.getString(4) %></td>
-<td>  <%=rs.getString(6) %></td>
-<td>  <%=rs.getString(5) %></td>
-<td>  <%=rs.getString(10) %></td>
+<td><%=books.getBook_title() %></td>
+<td>  <%=books.getCategory() %></td>
+<td>  <%=books.getAuthor() %></td>
+<td>  <%=books.getRack_num() %></td>
+<td>  <%=books.getPrice() %></td>
+<td>  <%=books.getPrerequest() %></td>
 </tr>	
 				
-			<%} %>
-			
+		
+<%} %>			
 			</table>
 
 </body>

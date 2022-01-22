@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.library.connection.*" import="com.library.dao.impl.*" import="com.library.model.*"%>
@@ -55,12 +56,16 @@ color:black;
 background-color:white; 
 
 }
+#capital{
+text-transform: capitalize;}
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
-  color: white;
+   color: white;
   float: right;
-}   
+}  
+.topnav{
+background-color:gray;
+} 
 </style>
 </head>
 <body>
@@ -70,16 +75,18 @@ background-color:white;
 		response.sendRedirect("index.jsp");
 	}
 	%>
-<div class="topnav" >
-
+<div class="topnav">
+<h1 style="float:left;">Library Managemen</h1>
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
+<h1>t	</h1>
+
   
 </div>
-<%!ResultSet rs; %>
-<h1>Unavailable Book List</h1>
+
+
 <br><br>
-<div class="container-fluid">
+<div class="container">
 <table class="table table-hover" style="font-size:larger;">
 <th><b>Book Name</b></th>
 <th><b>Category</b></th>
@@ -87,20 +94,17 @@ background-color:white;
 <th><b>User Name</b></th>
 <th><b>Price</b></th>
 <th><b>Pre Request</b></th>
-<%
-
-BooksDaoImpl user = new BooksDaoImpl();
-
-				rs = user.unavailableBookList();
-				while(rs.next()){%>
+<%List<Books> book=(List<Books>) session.getAttribute("unavailableBookList");
+for(Books books:book){%>
 					
 			<tr>
-<td><%=rs.getString(2)%></td>
-<td>  <%=rs.getString(3) %></td>
-<td>  <%=rs.getString(4) %></td>
-<td>  <%=rs.getString(8) %></td>
-<td>  <%=rs.getString(5) %></td>
-<td>  <%=rs.getString(10) %></td>
+
+<td>  <%=books.getBook_title() %></td>
+<td>  <%=books.getCategory() %></td>
+<td>  <%=books.getAuthor() %></td>
+<td id="capital">  <%=books.getUser_name() %></td>
+<td>  <%=books.getPrice() %></td>
+<td><%=books.getPrerequest() %></td>
 </tr>	
 				
 			<%} %>

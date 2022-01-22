@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"  import="com.library.connection.*" import ="java.util.List" import ="com.library.test.*" import="java.sql.*" import="com.library.dao.impl.*" %>
+    pageEncoding="ISO-8859-1"  import="com.library.connection.*" import ="java.util.List" import ="com.library.test.*" import="java.sql.*" import="com.library.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +36,12 @@ table, th, td {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  overflow:hidden;
 }
+
+.topnav{
+background-color:gray;
+overflow:hidden;}
 .topnav a:hover {
   background-color: #ddd;
   color: black;
@@ -56,7 +61,7 @@ background-color:white;
 
 /* Add a color to the active/current link */
 .topnav a,h1 {
-  background-color: black;
+  
   color: white;
   float: right;
 }
@@ -79,8 +84,7 @@ color:white;
    <%session.removeAttribute("eligible"); }
    %>
 
-<%BooksDaoImpl book = new BooksDaoImpl();
-ResultSet rs = book.showBooks();%>
+
 <div class="topnav" >
 <h1 style="float:left;"> Library Management</h1>
   <a class="active" href="user.jsp">Home</a>
@@ -89,17 +93,19 @@ ResultSet rs = book.showBooks();%>
 <div class="container-fluid">
 <table class="table table-hover" style="font-size:larger;">
 <th><b>BookName</b></th>
-<th><b>Category</b></th>
 <th><b>Author</b></th>
+<th><b>Category</b></th>
 <th><b>Borrow</b></th>
-<%while(rs.next()) {
+
+<%List<Books> book=(List<Books>) session.getAttribute("booksList");for(Books books:book){
+	
 %>
 <form action="bookName" method="post">
 <tr>
-<td><%=rs.getString(1)%></td>
-<td>  <%=rs.getString(2) %></td>
-<td>  <%=rs.getString(3) %></td>
-<td> <a href="bookName?bookname=<%=rs.getString(1) %>">Borrow Book</a> </td>
+<td><%=books.getBook_title() %></td>
+<td>  <%=books.getAuthor() %></td>
+<td>  <%=books.getCategory() %></td>
+<td> <a href="bookName?bookname=<%=books.getBook_title() %>">Borrow Book</a> </td>
 </tr>
 <%
 }

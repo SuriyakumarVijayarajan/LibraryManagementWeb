@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <title>Book Return</title>
 <style type="text/css">
 table, th, td {
@@ -14,9 +17,9 @@ table, th, td {
 }
 
         #register{
-        background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
             width: 350px;
             margin-left: 600px;
+            margin-top:100px;
             
         }
         body{
@@ -48,9 +51,13 @@ color:white;
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
+}
+.topnav{
+background-color:gray;
+overflow:hidden;
 }   
 </style>
 </head>
@@ -62,9 +69,11 @@ color:white;
 	}
 	%>
 	<div class="topnav" >
+	<h2 style="float:left;">Library Management</h2>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
+<h1>The Books To be Returned</h1>
 <fieldset id="register">
 <form action="bookReturn">
 
@@ -76,7 +85,7 @@ String book_name=null;
 Books books=new Books(book_name,user_name);
 rs=book.returnBookList(books);
 if(rs.next()){%>
-	<h1>The Books To be Returned</h1>
+	
 <%do{%>
 <%=rs.getString(1) %>&emsp;&ensp;<a href="bookReturn?bookreturn=<%=rs.getString(1)%>">Return Book</a><br><br>
 <%}while(rs.next());

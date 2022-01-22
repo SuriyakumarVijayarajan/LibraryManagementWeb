@@ -33,7 +33,7 @@ public class AddBookServlet extends HttpServlet {
 		String category=request.getParameter("text2");
 		String author=request.getParameter("text3");
 		int price=Integer.parseInt(request.getParameter("text4"));
-		String rack_number=request.getParameter("text5");
+		int rack_number=Integer.parseInt(request.getParameter("text5"));
 		
 		 OrderBookDaoImpl obDao=new OrderBookDaoImpl();
 	       OrderBook order=new OrderBook("null",book_name,author);

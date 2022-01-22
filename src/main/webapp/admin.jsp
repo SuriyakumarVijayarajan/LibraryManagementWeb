@@ -122,7 +122,7 @@ i {
 									class="ms-1 d-none d-sm-inline">Home</span>
 							</a></li>
 
-							<li><a href="authorShowBook.jsp"
+							<li><a href="bookShowUser"
 								class="nav-link px-0 align-middle text-dark"> <i
 									class="fs-4 bi-table"></i> <span
 									
@@ -143,15 +143,15 @@ i {
 								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">View All Users</span>
 							</a></li>
-							<li><a href="AvailableBookList.jsp"
+							<li><a href="adminBookList"
 								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">View Available Books</span></a></li>
-							<li><a href="UnavailableBookList.jsp"
+							<li><a href="unavailableBooks"
 								class="nav-link px-0 text-dark"> <span
 									class="d-none d-sm-inline">View Unavailable Books</span></a></li>
 
 
-							<li><a href="BookIssueList.jsp"
+							<li><a href="BookIssueList"
 								class="nav-link px-0 align-middle text-dark"> <i
 									class="fs-4 bi-people"></i> <span
 									class="ms-1 d-none d-sm-inline">View Book Issue Details</span>

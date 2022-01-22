@@ -159,7 +159,7 @@ public ResultSet userHistory(BookIssue book) {
 public ResultSet bookIssueList() {
 	
 
-	String query="select * from book_issue_details";
+	String query="select user_name,book_title,date_issue,date_return,date_returned,fine_range_in_month,book_issue_no from book_issue_details";
 	try {
 	Connection con=ConnectionUtil.getDBConnect();
 	PreparedStatement pstmt = con.prepareStatement(query);

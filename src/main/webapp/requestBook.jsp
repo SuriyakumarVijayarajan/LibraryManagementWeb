@@ -5,6 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>New Book Request</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 <style>
         #register{
             width: 350px;
@@ -12,10 +15,10 @@
             
         }
         body{
-            background-image: url(Assets/Bgimage.jpeg);
+            background-image: url(Assets/Rose-flowers-books.jpg);
             background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
         .topnav a {
   float: left;
@@ -30,10 +33,14 @@
   color: black;
 }
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
 } 
+.topnav{
+background-color: gray;
+overflow:hidden;
+}
 
     </style>
 </head>
@@ -45,6 +52,7 @@
 	}
 	%>
 	<div class="topnav" >
+	<h2 style="float:left;">Library Management</h2>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>

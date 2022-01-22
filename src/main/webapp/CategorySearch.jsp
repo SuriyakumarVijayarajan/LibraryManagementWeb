@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 <title>Category Search</title>
 <style type="text/css">
 table, th, td {
@@ -15,7 +18,7 @@ table, th, td {
 
         #register{
             width: 350px;
-            margin-left: 600px;
+            
             
         }
         body{
@@ -42,10 +45,14 @@ table, th, td {
   background-color: #ddd;
   color: black;
 }
+.topnav{
+background-color: gray;
+overflow:hidden;
+}
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
 }   
@@ -59,10 +66,11 @@ table, th, td {
 	}
 	%>
 <div class="topnav" >
+<h1 style="float:left;">Library Management</h1>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
-<fieldset id="register">
+
 <%!ResultSet rs; %>
 <%String categoryName=request.getParameter("category");
 
@@ -73,8 +81,9 @@ BooksDaoImpl book=new BooksDaoImpl();
 Books b1=new Books(book_title,categoryName,authorName);
 rs = book.categoryFetch(b1); %>
 
-<h1>Book List</h1>
+<h2>Book List for category: <%=categoryName %></h1>
 
+<fieldset id="register" class="container">
 
 <% if(rs.next()){do{ %>
 

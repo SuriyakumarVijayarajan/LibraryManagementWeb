@@ -28,27 +28,31 @@
 		font-size:larger;
 		}
 		
-		.mynav a {
+		.topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  margin-top:-50px;
+  margin-top:0px;
 
 }
-.mynav a:hover {
+.topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
 /* Add a color to the active/current link */
-.mynav a {
-  background-color: black;
+.topnav a {
+ 
   color: white;
   float: right;
 }
+
+.topnav{
+background-color: gray;
+overflow:hidden;}
 
 form{
 border:2px solid white;
@@ -65,18 +69,19 @@ background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
 		response.sendRedirect("index.jsp");
 	}
 	%>
-<div class="mynav" >
+<div class="topnav" >
+<h1 style="float:left;">Library Management</h1>
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
   
 </div>
     
         <fieldset id="register">
-            
+          <legend><h3>Supplier register</h3></legend>  
             
         <form action="adminjsp" method="post">
         <div class="container-mt-1" >
-        <legend><h3>Supplier register</h3></legend>
+        
         <label for="user name">User name</label><br>
         <input type="text" id="text" name="text"  required pattern="[A-Za-z]{3,}" ><br><br>
         <label for="city">City</label><br>

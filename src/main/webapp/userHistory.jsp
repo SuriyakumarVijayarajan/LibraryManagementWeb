@@ -6,18 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>User History</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <style type="text/css">
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 20px;
-}
-.table tr:hover{
-color:black;
-background-color: white;
 }
 
         #register{
@@ -30,6 +25,7 @@ background-color: white;
            background-repeat: no-repeat;
             background-size:cover;
             color:white;
+            font-size:larger;
         }
 		button{
 		font-size:larger;
@@ -41,20 +37,40 @@ background-color: white;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  overflow:hidden;
 }
+
+.topnav{
+background-color:gray;
+overflow:hidden;}
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
+.table tabl-hover{
+font-size:larger;
+}
+.table tr{
+color:white;
+}
+
+.table tr:hover{
+color:black;
+background-color:white; 
+
+}
 
 /* Add a color to the active/current link */
-.topnav a {
-  background-color: black;
+.topnav a,h1 {
+  
   color: white;
   float: right;
+}
+a{
+color:white;
 }   
 </style>
-</head>.
+</head>
 <body>
 <%
 	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
@@ -63,13 +79,16 @@ background-color: white;
 	}
 	%>
 <div class="topnav" >
+<h1 style="float:left;"> Library Management</h1>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
   
 </div>
 <%!ResultSet rs; %>
+<br><br>
+
 <div class="container">
-<h1>Book Borrow History</h1>
+<h1 style="float:left;">Book Borrow History</h1>
 <table class="table table-hover" style="color:white;">
 <th><b>Book Name</b></th>
 <th><b>Borrowed Date</b></th>

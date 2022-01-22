@@ -147,17 +147,19 @@ button {
 	<br>
 	<div class="topnav">
 
-
+<form method="post">
 		<div class="main-header">
 			<div class="container">
 
 				<div id="admin1">
 					<nav class="navitem">
 						<div class='navbar-links' id='navbar-links'>
-							<a href="SearchBook.jsp">Search Books</a> <a href="showBook.jsp">View
-								Books</a> <a href="orderBook.jsp">Ordered Book List</a> <a
-								href="returnBook.jsp">Return Book</a> <a href="requestBook.jsp">Request
-								New Book</a> <a href="userHistory.jsp">View Book Borrow History</a>
+							<a href="SearchBook.jsp">Search Books</a> 
+							<a href="bookShowUser">View	Books</a> 
+							<a href="orderBook.jsp">Ordered Book List</a> 
+							<a href="returnBook.jsp">Return Book</a> 
+							<a href="requestBook.jsp">Request New Book</a> 
+							<a href="userHistory.jsp">View Book Borrow History</a>
 							<a href="Logout.jsp" style="float: right;">Logout</a>
 
 
@@ -167,6 +169,7 @@ button {
 					</nav>
 				</div>
 			</div>
+</form>
 			
 
 		</div>

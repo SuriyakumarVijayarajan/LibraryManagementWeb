@@ -27,7 +27,7 @@ table, th, td {
             background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
              .topnav a {
   float: left;
@@ -47,7 +47,6 @@ color:black;
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
   color: white;
   float: right;
 }
@@ -61,7 +60,10 @@ color:white;
 table tr:hover{
 color:black;
 background-color:white; 
-
+}
+.topnav{
+background-color: gray;
+overflow:hidden;
 }
 </style>
 </head>
@@ -73,10 +75,11 @@ background-color:white;
 	}
 	%>
 	<div class="topnav" >
+	<h1 style="float:left;color:white;">Library Management</h1>
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
-
+<h3>Ordered Book List</h3>
 <%!ResultSet rs = null; %>
 <%
 		session = request.getSession();
@@ -93,7 +96,7 @@ background-color:white;
 			e.printStackTrace();
 		}if (rs.next()) {
 	%>
-		<table>
+		<table class="container">
 		<tr>
 		<th><b>BookName</b></th>
 		<th><b>Author</b></th>

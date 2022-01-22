@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.library.connection.*" import="com.library.dao.impl.*" import="com.library.model.*"%>
@@ -57,10 +58,13 @@ background-color:white;
 }
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
-}   
+} 
+.topnav{
+background-color:gray;
+overflow:hidden;}  
 </style>
 </head>
 <body>
@@ -71,14 +75,16 @@ background-color:white;
 	}
 	%>
 <div class="topnav" >
+<h1 style="float:left;">Library Management</h1>
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
+ 
   
 </div>
-<%!ResultSet rs; %>
+
 <h1>Book Issue List</h1>
 <br><br>
-<div class="container-fluid">
+<div class="container">
 <table class="table table-hover" style="font-size:larger;">
 <th><b>Book Issue No</b></th>
 <th><b>Book Name</b></th>
@@ -88,21 +94,18 @@ background-color:white;
 <th><b>Date Returned</b></th>
 <th><b>Fine Range in Month</b></th>
 
-<%
-
-BookIssueDaoImpl user = new BookIssueDaoImpl();
-
-				rs = user.bookIssueList();
-				while(rs.next()){%>
+<%List<BookIssue> book=(List<BookIssue>) session.getAttribute("BookIssueList");for(BookIssue books:book){
+	
+%>
 					
 			<tr>
-			<td>  <%=rs.getString(7) %></td>
-<td><%=rs.getString(2)%></td>
-<td>  <%=rs.getString(1) %></td>
-<td>  <%=rs.getDate(3) %></td>
-<td>  <%=rs.getDate(4) %></td>
-<td>  <%=rs.getDate(5) %></td>
-<td>  <%=rs.getInt(6) %></td>
+			<td>  <%=books.getBook_issue_id() %></td>
+<td><%=books.getUser_name() %></td>
+<td>  <%=books.getBook_code() %></td>
+<td>  <%=books.getDate_issue() %></td>
+<td>  <%=books.getDate_return() %></td>
+<td>  <%=books.getDate_returned() %></td>
+<td>  <%=books.getFine_range() %></td>
 
 </tr>	
 				

@@ -1,3 +1,4 @@
+<%@page import="com.library.model.Books"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"  import="com.library.connection.*" import ="java.util.List" import ="com.library.test.*" import="java.sql.*" import="com.library.dao.impl.*" %>
 <!DOCTYPE html>
@@ -57,13 +58,17 @@ background-color:white;
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
 }
+.topnav{
+background-color: gray;
+overflow:hidden;
+}
 th{
 font-style: italic;
-color:black;}   
+}   
 </style>
 </head>
 <body>
@@ -74,24 +79,25 @@ color:black;}
 	}
 	%>
 <div class="topnav" >
+<h1 style="float:left;">Library Management</h1> 
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
-
-<%BooksDaoImpl book = new BooksDaoImpl();
-ResultSet rs = book.showBooks();%>
-<div class="container-fluid">
+<h2>Book List</h2>
 <table class="table table-hover" style="font-size:larger;">
 <th><b><h3>BookName</h3></b></th>
 <th><b><h3>Category</h3></b></th>
 <th><b><h3>Author</h3></b></th>
-<%while(rs.next()) {
+<%List<Books> book=(List<Books>) session.getAttribute("booksList");for(Books books:book){
+	
 %>
+<div class="container-fluid">
+
 <form action="bookName" method="post">
 <tr>
-<td><h3><%=rs.getString(1)%></h3></td>
-<td><h3><%=rs.getString(2) %></h3></td>
-<td><h3><%=rs.getString(3) %></h3></td>
+<td><%=books.getBook_title() %></td>
+<td>  <%=books.getAuthor() %></td>
+<td>  <%=books.getCategory() %></td>
 </tr>
 <%
 }

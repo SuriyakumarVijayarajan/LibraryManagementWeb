@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <title>Author Search</title>
 <style type="text/css">
 table, th, td {
@@ -14,7 +17,6 @@ table, th, td {
 }
 
         #register{
-        background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
             width: 350px;
             margin-left: 600px;
             
@@ -47,10 +49,14 @@ table, th, td {
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+  
   color: white;
   float: right;
 }   
+.topnav{
+background-color:gray;
+overflow:hidden;
+}
 </style>
 </head>
 <body>
@@ -61,10 +67,11 @@ table, th, td {
 	}
 	%>
 <div class="topnav" >
+<h1 style="float:left">Library Management</h1>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
-<fieldset id="register">
+
 <%!
 ResultSet rs;
 %>
@@ -80,9 +87,9 @@ String category = null,book_title=null,author=null;
 Books books=new Books(book_title,category,authorName);
 rs = book.authorFetch(books);
 
-%>
-<h1>Book List</h1>
-
+%> 
+<h2>Book List for Author: <%=authorName %></h2>
+<fieldset id="register" class="container">
 <br>
 <%if(rs.next()){do{ %>
 <a href="bookName?bookname=<%=rs.getString(1) %>" style="text-decoration: none;color:white;"><%= rs.getString(1)%></a><br>

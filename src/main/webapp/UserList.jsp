@@ -58,10 +58,12 @@ table, th, td {
 
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
-  color: white;
+    color: white;
   float: right;
-}   
+} 
+.topnav{
+background-color:gray;
+overflow:hidden;}  
 </style>
 </head>
 <body>
@@ -72,6 +74,7 @@ table, th, td {
 	}
 	%>
 <div class="topnav" >
+<h1 style="float:left;">Library Management</h1>
   <a class="active" href="admin.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>
   

@@ -15,6 +15,31 @@ table, th, td {
   border-collapse: collapse;
   padding: 20px;
 }
+.button {
+  background-color:pink; 
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius:20px;
+  
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid pink;
+  }
+  .button1:hover {
+  background-color:gray;
+  color: white;
+}
+
 
         table{
             width: 350px;
@@ -27,7 +52,7 @@ table, th, td {
             background-image: url(Assets/Rose-flowers-books.jpg);
            background-repeat: no-repeat;
             background-size:cover;
-            color:springgreen;
+            color:white;
         }
         .topnav a {
   float: left;
@@ -57,10 +82,13 @@ background-color:white;
 
 }
 
-
+.topnav{
+ background-color: gray;
+ overflow:hidden;
+}
 /* Add a color to the active/current link */
 .topnav a {
-  background-color: black;
+ 
   color: white;
   float: right;
 } 
@@ -76,10 +104,11 @@ background-color:white;
 	%>
 	
 	<div class="topnav" >
+	<h1 style="float:left;">Library Management</h1>
   <a class="active" href="user.jsp">Home</a>
   <a href="Logout.jsp">Logout</a>  
 </div>
-
+<h2>Ordered Books</h2>
 <%!ResultSet rs = null; %>
 <%
 		session = request.getSession();
@@ -99,7 +128,7 @@ background-color:white;
 			e.printStackTrace();
 		}if (rs.next()) {
 	%>
-		<table class = "container-fluid">
+		<table class = "container">
 		<tr>
 		<th><b>BookName</b></th>
 		<th><b>Author</b></th>
@@ -110,7 +139,7 @@ background-color:white;
 			<td><%=rs.getString(2)%></td>
 			<td><%=rs.getString(3)%></td>
 			<%if(rs.getString(5).equals("arrived")){%>
-			<td><button style="font-size:large;width:100px;"><a href="bookName?bookname=<%=rs.getString(2)%>&orderAuthorName=<%=rs.getString(3)%>" style="text-decoration:none;">Borrow Book</a></button></td>
+			<td><button style="font-size:large;width:100px;" class="button button1"><a href="bookName?bookname=<%=rs.getString(2)%>&orderAuthorName=<%=rs.getString(3)%>" style="text-decoration:none;color:black; ">Borrow Book</a></button></td>
 			<%}else %>
 			
 			</tr>

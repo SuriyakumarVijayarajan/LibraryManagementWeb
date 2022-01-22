@@ -23,7 +23,7 @@ public class BooksDaoImpl implements BooksDao {
 		pstmt.setString(3, book.getCategory());
 		pstmt.setString(4, book.getAuthor());
 		pstmt.setInt(5, book.getPrice());
-		pstmt.setString(6, book.getRack_num());
+		pstmt.setInt(6, book.getRack_num());
 		
 		int i = pstmt.executeUpdate();
 		
@@ -385,7 +385,7 @@ public void delete(Books book) {
 		return rs;
 	}
 	public ResultSet availableBookList() {
-		String query="select * from book_details where availability in 'available'";
+		String query="select book_title,category,author,price,rack_num,prerequest from book_details where availability in 'available'";
 		ResultSet rs=null;
 		try {
 			Connection con=ConnectionUtil.getDBConnect();
@@ -402,7 +402,7 @@ public void delete(Books book) {
 	}
 	
 	public ResultSet unavailableBookList() {
-		String query="select * from book_details where availability in 'unavailable'";
+		String query="select book_title,category,author,price,user_name,prerequest from book_details where availability in 'unavailable'";
 		ResultSet rs=null;
 		try {
 			Connection con=ConnectionUtil.getDBConnect();

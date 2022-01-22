@@ -11,6 +11,7 @@ public class BookIssue {
 	private LocalDate date_issue;
 	private LocalDate date_return;
 	private LocalDate date_returned;
+	private int fine_range;
 //	public Date getDate_issue() {
 //		return date_issue;
 //	}
@@ -29,7 +30,25 @@ public class BookIssue {
 //	public void setDate_returned(Date date_returned) {
 //		this.date_returned = date_returned;
 //	}
-	private int fine_range;
+	
+	public BookIssue(int book_issue_id, String user_name, String book_code, LocalDate date_issue, LocalDate date_return,
+			LocalDate date_returned, int fine_range) {
+		super();
+		this.book_issue_id = book_issue_id;
+		this.user_name = user_name;
+		this.book_code = book_code;
+		this.date_issue = date_issue;
+		this.date_return = date_return;
+		this.date_returned = date_returned;
+		this.fine_range = fine_range;
+	}
+	public void setDate_return(LocalDate date_return) {
+		this.date_return = date_return;
+	}
+	public BookIssue() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getBook_issue_id() {
 		return book_issue_id;
 	}

@@ -7,12 +7,20 @@ public class Books {
 	private String category;
 	private String author;
 	private int price;
-	private String rack_num;
+	private int rack_num;
 	private String availability;
 	private String user_name;
 	private int book_issue_id;
+	private String prerequest;
 	
 	
+	
+	public String getPrerequest() {
+		return prerequest;
+	}
+	public void setPrerequest(String prerequest) {
+		this.prerequest = prerequest;
+	}
 	public int getBook_issue_id() {
 		return book_issue_id;
 	}
@@ -32,7 +40,7 @@ public class Books {
 		this.availability = availability;
 	}
 	public Books(String book_code, String book_title, String category, String author, int price,
-			String rack_num) {
+			int rack_num) {
 		super();
 		this.book_code = book_code;
 		this.book_title = book_title;
@@ -84,10 +92,10 @@ public class Books {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getRack_num() {
+	public int getRack_num() {
 		return rack_num;
 	}
-	public void setRack_num(String rack_num) {
+	public void setRack_num(int rack_num) {
 		this.rack_num = rack_num;
 	}
 

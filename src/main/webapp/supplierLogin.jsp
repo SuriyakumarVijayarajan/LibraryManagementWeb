@@ -52,13 +52,13 @@ table, th, td {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}if (rs.next()) {
-	do{%>
+	%>
 		<table>
 		<tr>
 		<th><b>BookName</b></th>
 		<th><b>Author</b></th>
 		</tr>
-	
+	<%do{ %>
 			<tr>
 			<td><%=rs.getString(2)%></td>
 			<td><%=rs.getString(3)%></td>
