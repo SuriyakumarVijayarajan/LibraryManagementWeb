@@ -38,19 +38,23 @@ public class FineHistoryDaoImpl implements FineHistoryDao {
 		
 	}
 
-	public ResultSet view() {
+	public List<FineHistory> view() {
 		// TODO Auto-generated method stub
 		List<FineHistory> fineList = new ArrayList<FineHistory>();
 		try {
-		String query="Select * from fine_history";
+		String query="Select user_name,fine_amount,collected_time from fine_history";
 		Connection con=ConnectionUtil.getDBConnect();
 		PreparedStatement pstmt=con.prepareStatement(query);
 		ResultSet rs=pstmt.executeQuery();
 		while(rs.next()) {
-			FineHistory fine=new FineHistory(rs.getString(1),rs.getInt(2),rs.getString(3));
+			FineHistory fine=new FineHistory();
+			fine.setUser_name(rs.getString(1));
+			fine.setFine_amount(rs.getInt(2));
+			fine.setCollected_time(rs.getString(3));
 			fineList.add(fine);
-			return rs;
-			} 
+			
+			}
+		return fineList;
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

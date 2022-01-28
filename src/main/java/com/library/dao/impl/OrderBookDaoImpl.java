@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.library.connection.ConnectionUtil;
 import com.library.dao.OrderBookDao;
@@ -67,14 +69,13 @@ public void delete(OrderBook orderBook)  {
 		
 		System.out.println(i+"rows deleted successfully");
 		}catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-public ResultSet view(OrderBook order)  {
+public List<OrderBook> view(OrderBook order)  {
 	// TODO Auto-generated method stub
-	String query="select * from order_book where supplier_name in ? and status in 'pending'";
+	String query="select book_name,author from order_book where supplier_name in ? and status in 'pending'";
 	String query1="update order_book set status='sent' where supplier_name in ?";
 	ResultSet rs=null;
 	try {
@@ -86,9 +87,15 @@ public ResultSet view(OrderBook order)  {
 	PreparedStatement pstmt1=con.prepareStatement(query1);
 	pstmt1.setString(1, order.getUser_name());
 	pstmt1.executeUpdate();
-	return rs;
+	List<OrderBook> orderBook=new ArrayList();
+	while(rs.next()) {
+		order=new OrderBook();
+		order.setBook_name(rs.getString(1));
+		order.setAuthor(rs.getString(2));
+		orderBook.add(order);
+	}
+	return orderBook;
 	}catch (Exception e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
    return null;
@@ -121,7 +128,7 @@ public int updateStatus(OrderBook order)  {
 
 public ResultSet adminView()  {
 	// TODO Auto-generated method stub
-	String query="select * from order_book";
+	String query="select book_name,author,status from order_book";
 //	String query1="update order_book set status='sent' where supplier_name in ?";
 	ResultSet rs=null;
 	try {
@@ -145,7 +152,7 @@ public ResultSet adminView()  {
 
 public ResultSet userView(OrderBook order )  {
 	// TODO Auto-generated method stub
-	String query="select * from order_book where user_name in ?";
+	String query="select user_name,book_name,author,supplier_name,status from order_book where user_name in ?";
 //	String query1="update order_book set status='sent' where supplier_name in ?";
 	ResultSet rs=null;
 	try {

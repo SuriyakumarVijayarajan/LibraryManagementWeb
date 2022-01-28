@@ -5,9 +5,16 @@ public class OrderBook {
 	private String book_name;
 	private String author;
 	private String supplier_id;
+	private String status;
 	
 	
 
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getUser_name() {
 		return user_name;
 	}
@@ -32,12 +39,12 @@ public class OrderBook {
 	public void setSupplier_id(String supplier_id) {
 		this.supplier_id = supplier_id;
 	}
-	public OrderBook(String user_name,String book_name, String author, String supplier_id) {
+	public OrderBook(String user_name,String book_name, String author, String status) {
 		super();
 		this.user_name=user_name;
 		this.book_name = book_name;
 		this.author = author;
-		this.supplier_id = supplier_id;
+		this.status = status;
 	}
 	public OrderBook(String supplier_id, String book_name) {
 		// TODO Auto-generated constructor stub
@@ -53,6 +60,11 @@ public class OrderBook {
 		this.user_name=user_name;
 		this.book_name = book_name;
 		this.author = author;
+	}
+	
+	public OrderBook() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {

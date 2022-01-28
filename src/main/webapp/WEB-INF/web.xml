@@ -21,6 +21,69 @@
 		<servlet-name>UnavailableBookServlet</servlet-name>
 		<servlet-class>com.library.Servlet.UnavailableBookServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdminUserListServlet</display-name>
+		<servlet-name>AdminUserListServlet</servlet-name>
+		<servlet-class>com.library.Servlet.AdminUserListServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdminOrderBookServlet</display-name>
+		<servlet-name>AdminOrderBookServlet</servlet-name>
+		<servlet-class>com.library.Servlet.AdminOrderBookServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>BookReturnServlet</display-name>
+		<servlet-name>BookReturnServlet</servlet-name>
+		<servlet-class>com.library.Servlet.BookReturnServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UserHistoryServlet</display-name>
+		<servlet-name>UserHistoryServlet</servlet-name>
+		<servlet-class>com.library.Servlet.UserHistoryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddOrderBookServlet</display-name>
+		<servlet-name>AddOrderBookServlet</servlet-name>
+		<servlet-class>com.library.Servlet.AddOrderBookServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SupplierLoginServlet</display-name>
+		<servlet-name>SupplierLoginServlet</servlet-name>
+		<servlet-class>com.library.Servlet.SupplierLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>PreRequestServlet</display-name>
+		<servlet-name>PreRequestServlet</servlet-name>
+		<servlet-class>com.library.Servlet.PreRequestServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>WalletRechargeServlet</display-name>
+		<servlet-name>WalletRechargeServlet</servlet-name>
+		<servlet-class>com.library.Servlet.WalletRechargeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ReturnSuccessServlet</display-name>
+		<servlet-name>ReturnSuccessServlet</servlet-name>
+		<servlet-class>com.library.Servlet.ReturnSuccessServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>AdminBookListServlet</servlet-name>
 		<url-pattern>/AdminBookListServlet</url-pattern>
@@ -32,6 +95,42 @@
 	<servlet-mapping>
 		<servlet-name>UnavailableBookServlet</servlet-name>
 		<url-pattern>/UnavailableBookServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminUserListServlet</servlet-name>
+		<url-pattern>/AdminUserListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminOrderBookServlet</servlet-name>
+		<url-pattern>/AdminOrderBookServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BookReturnServlet</servlet-name>
+		<url-pattern>/BookReturnServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserHistoryServlet</servlet-name>
+		<url-pattern>/UserHistoryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddOrderBookServlet</servlet-name>
+		<url-pattern>/AddOrderBookServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SupplierLoginServlet</servlet-name>
+		<url-pattern>/SupplierLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PreRequestServlet</servlet-name>
+		<url-pattern>/PreRequestServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WalletRechargeServlet</servlet-name>
+		<url-pattern>/WalletRechargeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReturnSuccessServlet</servlet-name>
+		<url-pattern>/ReturnSuccessServlet</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 <welcome-file>home.jsp</welcome-file>

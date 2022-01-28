@@ -1,6 +1,8 @@
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.library.dao.impl.*" import="com.library.model.*"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,34 +70,14 @@ overflow:hidden;
 </style>
 </head>
 <body>
-<%
-	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
-		response.sendRedirect("index.jsp");
-	}
-	%>
+
 	<div class="topnav" >
 	<h1 style="float:left;color:white;">Library Management</h1>
   <a class="active" href="admin.jsp">Home</a>
-  <a href="Logout.jsp">Logout</a>  
+  <a href="logout.jsp">Logout</a>  
 </div>
 <h3>Ordered Book List</h3>
-<%!ResultSet rs = null; %>
-<%
-		session = request.getSession();
-		OrderBookDaoImpl obDao = new OrderBookDaoImpl();
-		String book_name=null;
-		String author=null;
-//		String user_name=session.getAttribute("supplier").toString();
-		
-		
-		try {
-			rs = obDao.adminView();
-		}  catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}if (rs.next()) {
-	%>
+
 		<table class="container">
 		<tr>
 		<th><b>BookName</b></th>
@@ -103,24 +85,25 @@ overflow:hidden;
 		<th><b>Status</b></th>
 		<th><b>Add Book</b></th>
 		</tr>
-	<%do{ %>
+	<c:forEach var="orderBook" items="${adminOrderBook}">
 			<tr>
-			<td><%=rs.getString(2)%></td>
-			<td><%=rs.getString(3)%></td>
-			<td><%=rs.getString(5) %></td>
-			<%if(rs.getString(5).equals("sent")){%>
-			<td><button style="font-size:large;width:100px;"><a href="addOrderBook.jsp?orderBookName=<%=rs.getString(2)%>&orderAuthorName=<%=rs.getString(3)%>" style="text-decoration:none;">Add Book</a></button></td>
-			<%} %>
+			<td>${orderBook.book_name }</td>
+			<td>${orderBook.author }</td>
+			<td>${orderBook.status }</td>
+			<c:set var="sent" value="sent" />
+			<c:if test="${orderBook.status eq sent}">
+			<td><button style="font-size:large;width:100px;"><a href="addOrderBook?orderBookName=${orderBook.book_name}&orderAuthorName=${orderBook.author}" style="text-decoration:none;">Add Book</a></button></td>
+			</c:if>
 			</tr>
-	<%	}while (rs.next());%>
+	</c:forEach>
 	</table>
 	<br>
 
-		<%}
-	else{%>
+		
 	
-	<h1>You dont have any orders</h1>
-	<%}%>
+	
+	
+
 
 </body>
 </html>

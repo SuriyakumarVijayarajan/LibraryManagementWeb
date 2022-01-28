@@ -10,7 +10,16 @@ public class Users {
 	private int user_id;
 	private int fine_amount;
 	private String user_role;
+	private int userWallet;
 	
+	public int getUserWallet() {
+		return userWallet;
+	}
+
+	public void setUserWallet(int userWallet) {
+		this.userWallet = userWallet;
+	}
+
 	public Users(String user_name, String city, String user_role, String password, long mobile_no, String email_id) {
 		super();
 		this.user_name = user_name;
@@ -124,7 +133,7 @@ public class Users {
 	@Override
 	public String toString() {
 		return "Users [user_name=" + user_name + ", city=" + city + ", password=" + password + ", mobile_no="
-				+ mobile_no + ", email_id=" + email_id + ", user_id=" + user_id + ", fine_amount=" + fine_amount + "]";
+				+ mobile_no + ", email_id=" + email_id + ", user_id=" + user_id + ", fine_amount=" + fine_amount + ", userwallet=\" + userWallet + \" ]";
 	}
 
 	

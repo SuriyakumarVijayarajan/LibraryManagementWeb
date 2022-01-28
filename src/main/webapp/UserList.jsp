@@ -1,6 +1,8 @@
+<%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.library.connection.*" import="com.library.dao.impl.*" import="com.library.model.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,19 +69,13 @@ overflow:hidden;}
 </style>
 </head>
 <body>
-<%
-	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-	if ((session.getAttribute("user") == null)&&(session.getAttribute("admin")==null)&&(session.getAttribute("supplier")==null)) {
-		response.sendRedirect("index.jsp");
-	}
-	%>
+
 <div class="topnav" >
 <h1 style="float:left;">Library Management</h1>
   <a class="active" href="admin.jsp">Home</a>
-  <a href="Logout.jsp">Logout</a>
+  <a href="logout.jsp">Logout</a>
   
 </div>
-<%!ResultSet rs; %>
 <h1>User List</h1>
 <div class="container-fluid">
 <table class="table table-hover" style="font-size:larger;">
@@ -88,22 +84,17 @@ overflow:hidden;}
 <th><b>Contact No</b></th>
 <th><b>Email</b></th>
 <th><b>User Wallet</b></th>
-<%
+<c:forEach var="users" items="${adminUserList }">
 
-UsersDaoImpl user = new UsersDaoImpl();
-
-				rs = user.userList();
-				while(rs.next()){%>
-					
-			<tr>
-<td><%=rs.getString(1)%></td>
-<td>  <%=rs.getString(2) %></td>
-<td>  <%=rs.getString(6) %></td>
-<td>  <%=rs.getString(7) %></td>
-<td>  <%=rs.getString(9) %></td>
+<tr>
+<td>${users.user_name }</td>
+<td>${users.city }</td>
+<td>${users.mobile_no }</td>
+<td> ${users.email_id }</td>
+<td> ${users.userWallet }</td>
 </tr>	
-				
-			<%} %>
+</c:forEach>			
+			
 			
 			</table>
 </div>

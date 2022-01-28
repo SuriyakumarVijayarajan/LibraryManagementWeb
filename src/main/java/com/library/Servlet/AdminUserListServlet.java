@@ -14,26 +14,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.library.dao.impl.BooksDaoImpl;
+import com.library.dao.impl.UsersDaoImpl;
 import com.library.model.Books;
+import com.library.model.Users;
 
 /**
- * Servlet implementation class UnavailableBookServlet
+ * Servlet implementation class AdminUserListServlet
  */
-@WebServlet("/unavailableBooks")
-public class UnavailableBookServlet extends HttpServlet {
+@WebServlet("/adminUserList")
+public class AdminUserListServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-
-		BooksDaoImpl user = new BooksDaoImpl();
-	
+		UsersDaoImpl user = new UsersDaoImpl();
 		HttpSession session=request.getSession();
-
-		List<Books> bookList = user.unavailableBookList();
-		request.setAttribute("unavailableBookList", bookList);
-		RequestDispatcher rd=request.getRequestDispatcher("unavailableBookList.jsp");
-		rd.forward(request, response);			
+		List<Users> userList=user.userList();
+		request.setAttribute("adminUserList", userList);
+		RequestDispatcher rd=request.getRequestDispatcher("userList.jsp");
+		rd.forward(request, response);
+		
 	}
 
 }

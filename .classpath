@@ -37,5 +37,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="E:/library_project/SampleServlet/src/main/webapp/WEB-INF/lib/ojdbc11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/suri2915/Documents/jstl-1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
